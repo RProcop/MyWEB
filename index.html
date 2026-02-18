@@ -4,7 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IoT & Embedded Development</title>
-<link rel="stylesheet" href="assets/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body{
+  background:#0b1626;
+  color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:100vh;
+  padding:0 8%;
+  background:
+    radial-gradient(circle at 80% 40%, rgba(0,150,255,0.15), transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.12), transparent 50%),
+    linear-gradient(135deg,#0b1626,#111f36);
+  overflow:hidden;
+  position:relative;
+}
+
+/* ================= LEFT ================= */
+
+.hero-left{
+  width:45%;
+  z-index:2;
+}
+
+.hero-left h1{
+  font-size:90px;
+  font-weight:900;
+  line-height:0.9;
+  letter-spacing:-2px;
+}
+
+.subtitle{
+  margin-top:25px;
+  font-size:18px;
+  opacity:0.75;
+  line-height:1.6;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:35px;
+  padding:14px 32px;
+  border-radius:40px;
+  background:linear-gradient(90deg,#00c6ff,#0072ff);
+  font-weight:600;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 10px 30px rgba(0,140,255,0.4);
+  transition:0.3s ease;
+}
+
+.cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 40px rgba(0,140,255,0.6);
+}
+
+/* ================= RIGHT ================= */
+
+.hero-right{
+  position:relative;
+  width:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Большой фоновый текст */
+.bg-text{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:220px;
+  font-weight:900;
+  line-height:0.8;
+  text-align:right;
+  color:rgba(255,255,255,0.03);
+  pointer-events:none;
+}
+
+/* Акцентная линия */
+.accent-line{
+  position:absolute;
+  right:-100px;
+  top:0;
+  width:300px;
+  height:100%;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255,120,0,0.4),
+    transparent
+  );
+  filter:blur(60px);
+}
+
+/* Плавающая карточка */
+.floating-card{
+  position:relative;
+  width:560px;
+  border-radius:32px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(15px);
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.05);
+  transition:0.4s ease;
+}
+
+.floating-card:hover{
+  transform:translateY(-12px) rotateX(3deg);
+}
+
+.floating-card img{
+  width:100%;
+  display:block;
+  border-radius:32px;
+}
+
+/* Glow вокруг карточки */
+.floating-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:32px;
+  background:linear-gradient(135deg,#00c6ff,#ff6a00);
+  opacity:0.25;
+  z-index:-1;
+  filter:blur(25px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:80px 5%;
+  }
+
+  .hero-left, .hero-right{
+    width:100%;
+  }
+
+  .hero-left h1{
+    font-size:60px;
+  }
+
+  .bg-text{
+    display:none;
+  }
+
+  .floating-card{
+    width:100%;
+    max-width:500px;
+    margin-top:50px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -23,11 +198,22 @@
       Reliable hardware & firmware solutions.
     </p>
 
-    <a href="projects/" class="cta">View Projects</a>
+    <a href="#" class="cta">View Projects</a>
   </div>
 
   <div class="hero-right">
-    <div class="card hero-card"></div>
+
+    <div class="bg-text">
+      IOT<br>
+      R&D
+    </div>
+
+    <div class="accent-line"></div>
+
+    <div class="floating-card">
+      <img src="assets/img/hero-image.jpg" alt="Engineering">
+    </div>
+
   </div>
 
 </section>
