@@ -46,7 +46,6 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   padding:0 8%;
   position:relative;
   z-index:2;
-  overflow:hidden;
   background:
     radial-gradient(circle at 75% 35%, rgba(0,150,255,0.15), transparent 60%),
     radial-gradient(circle at 70% 80%, rgba(255,120,0,0.15), transparent 60%),
@@ -129,13 +128,19 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   inset:0;
   background:rgba(0,0,0,0.6);
   backdrop-filter:blur(8px);
-  display:none;
+  display:flex;
   align-items:center;
   justify-content:center;
   z-index:9999;
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s ease;
 }
 
-.modal-backdrop.open{display:flex;}
+.modal-backdrop.open{
+  opacity:1;
+  visibility:visible;
+}
 
 .modal{
   width:90%;
@@ -143,6 +148,12 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   background:#111f36;
   border-radius:20px;
   padding:30px;
+  transform:scale(0.9);
+  transition:0.3s ease;
+}
+
+.modal-backdrop.open .modal{
+  transform:scale(1);
 }
 
 .modal input,
@@ -169,15 +180,13 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 .close{
   float:right;
   cursor:pointer;
+  font-size:20px;
 }
-
-.status{margin-top:10px;font-size:14px;}
 </style>
 </head>
 
 <body>
 
-<!-- ELECTRON BACKGROUND -->
 <div class="electrons" id="electrons"></div>
 
 <section class="hero">
@@ -220,13 +229,12 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
       <textarea name="message" placeholder="Message" required></textarea>
       <button type="submit">Send</button>
     </form>
-
   </div>
 </div>
 
 <script>
 // ELECTRONS
-const container = document.getElementById("electrons");
+const container=document.getElementById("electrons");
 for(let i=0;i<25;i++){
   const el=document.createElement("div");
   el.classList.add("electron");
@@ -239,9 +247,32 @@ for(let i=0;i<25;i++){
 
 // MODAL
 const modal=document.getElementById("contactModal");
-document.getElementById("openContacts").onclick=()=>modal.classList.add("open");
-document.getElementById("closeContacts").onclick=()=>modal.classList.remove("open");
-modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};
+const openBtn=document.getElementById("openContacts");
+const closeBtn=document.getElementById("closeContacts");
+
+openBtn.onclick=()=>{
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+};
+
+closeBtn.onclick=()=>{
+  modal.classList.remove("open");
+  document.body.style.overflow="auto";
+};
+
+modal.onclick=(e)=>{
+  if(e.target===modal){
+    modal.classList.remove("open");
+    document.body.style.overflow="auto";
+  }
+};
+
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape"){
+    modal.classList.remove("open");
+    document.body.style.overflow="auto";
+  }
+});
 </script>
 
 </body>
