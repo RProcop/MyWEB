@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT & Embedded Development</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">R&D Engineer</div>
+  <div class="menu">
+    <a href="/">Home</a>
+    <a href="about/">About</a>
+    <a href="projects/">Projects</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1 data-aos="fade-up">IoT & Embedded Systems Development</h1>
+  <p data-aos="fade-up" data-aos-delay="200">
+    From idea to reliable working prototype.
+  </p>
+</section>
+
+<section class="services">
+  <div class="card" data-aos="fade-up">
+    <h3>IoT Development</h3>
+    <p>ESP32, STM32, BLE, WiFi, LoRa</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="100">
+    <h3>Embedded Firmware</h3>
+    <p>FreeRTOS, Drivers, Optimization</p>
+  </div>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="200">
+    <h3>3D Prototyping</h3>
+    <p>Functional enclosures and parts</p>
+  </div>
+</section>
+
+<a class="floating-btn" onclick="openContact()">Contact</a>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeContact()" class="close">&times;</span>
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Project description"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 800, once: true });
+</script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
 
