@@ -37,22 +37,22 @@ body{
     linear-gradient(135deg,#0b1626,#111f36);
 }
 
-/* Анимированное мягкое движение фона */
+/* Мягкое движение фона */
 .hero::before{
   content:"";
   position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(0,200,255,0.2), transparent 70%);
-  top:-200px;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(0,200,255,0.25), transparent 70%);
+  top:-250px;
   right:-200px;
-  filter:blur(100px);
-  animation:floatBg 12s ease-in-out infinite alternate;
+  filter:blur(120px);
+  animation:floatBg 14s ease-in-out infinite alternate;
 }
 
 @keyframes floatBg{
   0%{ transform:translateY(0); }
-  100%{ transform:translateY(80px); }
+  100%{ transform:translateY(100px); }
 }
 
 /* ================= LEFT ================= */
@@ -104,7 +104,7 @@ body{
   justify-content:center;
 }
 
-/* Огромный фоновый текст */
+/* Фоновый текст */
 .bg-text{
   position:absolute;
   right:0;
@@ -121,68 +121,68 @@ body{
 /* Акцентный glow */
 .accent-glow{
   position:absolute;
-  right:-120px;
-  width:300px;
+  right:-150px;
+  width:350px;
   height:100%;
-  background:linear-gradient(to bottom, transparent, rgba(255,120,0,0.4), transparent);
-  filter:blur(70px);
+  background:linear-gradient(to bottom, transparent, rgba(255,120,0,0.5), transparent);
+  filter:blur(90px);
 }
 
-/* Premium карточка */
+/* ================= УВЕЛИЧЕННАЯ PREMIUM КАРТОЧКА ================= */
+
 .floating-card{
   position:relative;
-  width:580px;
-  border-radius:36px;
+  width:90%;
+  max-width:900px;     /* большая ширина */
+  height:520px;        /* высокая карточка */
+  border-radius:42px;
   overflow:hidden;
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(20px);
+  backdrop-filter:blur(25px);
   box-shadow:
-    0 50px 120px rgba(0,0,0,0.7),
+    0 70px 180px rgba(0,0,0,0.75),
     0 0 0 1px rgba(255,255,255,0.05);
-  transition:transform 0.6s ease;
-  transform-style:preserve-3d;
+  animation:floatCard 7s ease-in-out infinite alternate;
+  transition:transform 0.5s ease;
 }
 
-/* Плавное авто-движение карточки */
+/* Плавное движение */
 @keyframes floatCard{
-  0%{ transform:translateY(0px) rotateX(0deg); }
-  100%{ transform:translateY(-15px) rotateX(3deg); }
-}
-
-.floating-card{
-  animation:floatCard 6s ease-in-out infinite alternate;
+  0%{ transform:translateY(0px); }
+  100%{ transform:translateY(-18px); }
 }
 
 /* Glow рамка */
 .floating-card::before{
   content:"";
   position:absolute;
-  inset:-3px;
-  border-radius:36px;
+  inset:-4px;
+  border-radius:42px;
   background:linear-gradient(135deg,#00c6ff,#ff6a00);
-  opacity:0.3;
-  filter:blur(30px);
+  opacity:0.35;
+  filter:blur(40px);
   z-index:-1;
 }
 
-/* Картинка с авто-зумом */
+/* Картинка */
 .floating-card img{
   width:100%;
-  display:block;
-  border-radius:36px;
-  animation:autoZoom 20s ease-in-out infinite alternate;
+  height:100%;
+  object-fit:cover;
+  border-radius:42px;
+  animation:autoZoom 22s ease-in-out infinite alternate;
   transform-origin:center;
 }
 
-/* Медленный премиум-зум */
+/* Медленный zoom */
 @keyframes autoZoom{
   0%{ transform:scale(1.1); }
   100%{ transform:scale(1.25); }
 }
 
-/* Hover усиление */
+/* Hover эффект */
 .floating-card:hover{
-  transform:scale(1.05);
+  transform:scale(1.04);
 }
 
 /* ================= RESPONSIVE ================= */
@@ -207,8 +207,7 @@ body{
   }
 
   .floating-card{
-    width:100%;
-    max-width:520px;
+    height:420px;
     margin-top:50px;
   }
 }
