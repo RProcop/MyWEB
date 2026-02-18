@@ -11,7 +11,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{background:#0b1626;color:white;overflow-x:hidden;}
 
-/* ================= ELECTRON ANIMATION ================= */
+/* ================= ELECTRON BACKGROUND ================= */
 
 .electrons{
   position:fixed;
@@ -27,7 +27,7 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   height:6px;
   background:radial-gradient(circle,#22d3ee,transparent);
   border-radius:50%;
-  opacity:0.6;
+  opacity:0.5;
   animation:moveElectron linear infinite;
 }
 
@@ -53,6 +53,7 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 }
 
 .hero-left{width:45%;}
+
 .hero-left h1{
   font-size:90px;
   font-weight:900;
@@ -63,13 +64,16 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 .subtitle{
   margin-top:25px;
   font-size:18px;
-  opacity:0.75;
+  opacity:0.8;
   line-height:1.6;
 }
 
-/* Buttons */
-
-.cta-group{margin-top:40px;display:flex;gap:20px;flex-wrap:wrap;}
+.cta-group{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
 
 .cta{
   padding:15px 35px;
@@ -100,7 +104,7 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   color:#0f172a;
 }
 
-/* Card */
+/* CARD */
 
 .hero-right{width:50%;display:flex;align-items:center;justify-content:center;}
 
@@ -195,17 +199,20 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
     <h1>
       EMBEDDED<br>
       IOT<br>
-      R&D
+      R&D<br>
+      3D Printing<br>
+      Modeling
     </h1>
 
     <p class="subtitle">
       Engineering-driven IoT systems.<br>
+      Reliable hardware & firmware solutions.<br>
       3D Printing & Modeling.
     </p>
 
     <div class="cta-group">
       <button class="cta">View Projects</button>
-      <button class="cta secondary" id="openContacts">Contact</button>
+      <button class="cta secondary" id="openContacts">Contact me</button>
     </div>
   </div>
 
@@ -248,32 +255,4 @@ for(let i=0;i<25;i++){
 // MODAL
 const modal=document.getElementById("contactModal");
 const openBtn=document.getElementById("openContacts");
-const closeBtn=document.getElementById("closeContacts");
-
-openBtn.onclick=()=>{
-  modal.classList.add("open");
-  document.body.style.overflow="hidden";
-};
-
-closeBtn.onclick=()=>{
-  modal.classList.remove("open");
-  document.body.style.overflow="auto";
-};
-
-modal.onclick=(e)=>{
-  if(e.target===modal){
-    modal.classList.remove("open");
-    document.body.style.overflow="auto";
-  }
-};
-
-document.addEventListener("keydown",(e)=>{
-  if(e.key==="Escape"){
-    modal.classList.remove("open");
-    document.body.style.overflow="auto";
-  }
-});
-</script>
-
-</body>
-</html>
+const closeBtn=document.getElementById("
