@@ -5,128 +5,241 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Embedded IoT R&D</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
 body{
-  font-family:Segoe UI,sans-serif;
   background:#0b1626;
   color:white;
   overflow-x:hidden;
 }
 
-/* ================= ELECTRONS ================= */
-
-.electrons{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:0;
-}
-
-.electron{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:#22d3ee;
-  border-radius:50%;
-  opacity:0.6;
-  animation:move linear infinite;
-}
-
-@keyframes move{
-  from{transform:translate(-10vw,110vh);}
-  to{transform:translate(110vw,-10vh);}
-}
-
 /* ================= HERO ================= */
 
 .hero{
-  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  min-height:100vh;
   padding:0 8%;
   position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(0,150,255,0.15), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.15), transparent 60%),
+    linear-gradient(135deg,#0b1626,#111f36);
+}
+
+/* Мягкое движение фона */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle, rgba(0,200,255,0.25), transparent 70%);
+  top:-250px;
+  right:-200px;
+  filter:blur(120px);
+  animation:floatBg 14s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg{
+  0%{ transform:translateY(0); }
+  100%{ transform:translateY(100px); }
+}
+
+/* ================= LEFT ================= */
+
+.hero-left{
+  width:45%;
   z-index:2;
 }
 
-.hero-left{width:45%;}
 .hero-left h1{
-  font-size:80px;
+  font-size:90px;
+  font-weight:900;
   line-height:0.9;
+  letter-spacing:-2px;
 }
 
 .subtitle{
   margin-top:25px;
-  opacity:0.8;
+  font-size:18px;
+  opacity:0.75;
+  line-height:1.6;
+}
+
+/* ===== BUTTONS ===== */
+
+.cta-group{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 .cta{
-  margin-top:40px;
-  padding:14px 30px;
+  display:inline-block;
+  padding:15px 35px;
   border-radius:50px;
-  background:#22d3ee;
-  color:#0f172a;
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
+  background:linear-gradient(90deg,#00c6ff,#0072ff);
+  font-weight:600;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 10px 40px rgba(0,140,255,0.5);
+  transition:0.4s ease;
 }
 
 .cta:hover{
-  transform:scale(1.05);
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,140,255,0.7);
 }
+
+/* Secondary button */
+
+.cta.secondary{
+  background:transparent;
+  color:#22d3ee;
+  border:2px solid #22d3ee;
+  box-shadow:none;
+}
+
+.cta.secondary:hover{
+  background:#22d3ee;
+  color:#0f172a;
+  transform:translateY(-4px);
+}
+
+/* ================= RIGHT ================= */
 
 .hero-right{
+  position:relative;
   width:50%;
-}
-
-.card{
-  width:100%;
-  height:400px;
-  background:#1e293b;
-  border-radius:30px;
-}
-
-/* ================= MODAL ================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  display:none;
+  display:flex;
   align-items:center;
   justify-content:center;
-  z-index:999;
 }
 
-.modal-content{
-  background:#111f36;
-  padding:30px;
-  border-radius:20px;
+/* Фоновый текст */
+.bg-text{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:220px;
+  font-weight:900;
+  line-height:0.8;
+  text-align:right;
+  color:rgba(255,255,255,0.03);
+  pointer-events:none;
+}
+
+/* Акцентный glow */
+.accent-glow{
+  position:absolute;
+  right:-150px;
+  width:350px;
+  height:100%;
+  background:linear-gradient(to bottom, transparent, rgba(255,120,0,0.5), transparent);
+  filter:blur(90px);
+}
+
+/* ================= CARD ================= */
+
+.floating-card{
+  position:relative;
   width:90%;
-  max-width:500px;
+  max-width:900px;
+  height:520px;
+  border-radius:42px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(25px);
+  box-shadow:
+    0 70px 180px rgba(0,0,0,0.75),
+    0 0 0 1px rgba(255,255,255,0.05);
+  animation:floatCard 7s ease-in-out infinite alternate;
+  transition:transform 0.5s ease;
 }
 
-.modal-content input,
-.modal-content textarea{
+@keyframes floatCard{
+  0%{ transform:translateY(0px); }
+  100%{ transform:translateY(-18px); }
+}
+
+.floating-card::before{
+  content:"";
+  position:absolute;
+  inset:-4px;
+  border-radius:42px;
+  background:linear-gradient(135deg,#00c6ff,#ff6a00);
+  opacity:0.35;
+  filter:blur(40px);
+  z-index:-1;
+}
+
+.floating-card img{
   width:100%;
-  margin-bottom:15px;
-  padding:10px;
+  height:100%;
+  object-fit:cover;
+  border-radius:42px;
+  animation:autoZoom 22s ease-in-out infinite alternate;
+  transform-origin:center;
 }
 
-.close{
-  float:right;
-  cursor:pointer;
+@keyframes autoZoom{
+  0%{ transform:scale(1.1); }
+  100%{ transform:scale(1.25); }
+}
+
+.floating-card:hover{
+  transform:scale(1.04);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:80px 5%;
+  }
+
+  .hero-left, .hero-right{
+    width:100%;
+  }
+
+  .hero-left h1{
+    font-size:60px;
+  }
+
+  .bg-text{
+    display:none;
+  }
+
+  .floating-card{
+    height:420px;
+    margin-top:50px;
+  }
+
+  .cta-group{
+    justify-content:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="electrons" id="electrons"></div>
-
 <section class="hero">
+
   <div class="hero-left">
     <h1>
       EMBEDDED<br>
@@ -138,54 +251,32 @@ body{
 
     <p class="subtitle">
       Engineering-driven IoT systems.<br>
+      Reliable hardware & firmware solutions.<br>
       3D Printing & Modeling.
     </p>
 
-    <button class="cta" onclick="openModal()">Contact me</button>
+    <div class="cta-group">
+      <a href="#" class="cta">View Projects</a>
+      <a href="#" class="cta secondary">Contacts</a>
+    </div>
   </div>
 
   <div class="hero-right">
-    <div class="card"></div>
+
+    <div class="bg-text">
+      IOT<br>
+      R&D
+    </div>
+
+    <div class="accent-glow"></div>
+
+    <div class="floating-card">
+      <img src="assets/img/hero-image.jpg" alt="Engineering">
+    </div>
+
   </div>
+
 </section>
-
-<!-- MODAL -->
-<div class="modal" id="contactModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">✕</span>
-    <h2>Contact me</h2>
-
-    <form action="https://formspree.io/f/meelzrvv" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
-
-<script>
-/* ELECTRONS */
-const container=document.getElementById("electrons");
-for(let i=0;i<30;i++){
-  const el=document.createElement("div");
-  el.className="electron";
-  el.style.left=Math.random()*100+"vw";
-  el.style.top=Math.random()*100+"vh";
-  el.style.animationDuration=(8+Math.random()*12)+"s";
-  el.style.animationDelay=(-Math.random()*20)+"s";
-  container.appendChild(el);
-}
-
-/* MODAL */
-function openModal(){
-  document.getElementById("contactModal").style.display="flex";
-}
-
-function closeModal(){
-  document.getElementById("contactModal").style.display="none";
-}
-</script>
 
 </body>
 </html>
