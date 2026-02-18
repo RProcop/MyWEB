@@ -10,36 +10,6 @@ body {
   background: radial-gradient(circle at 70% 30%, #1e293b 0%, #0f172a 60%);
   color: white;
   overflow-x: hidden;
-  position: relative;
-}
-
-/* ================= ELECTRON BACKGROUND ================= */
-
-.electrons {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.electron {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: radial-gradient(circle, #22d3ee, transparent);
-  border-radius: 50%;
-  opacity: 0.5;
-  animation: moveElectron linear infinite;
-}
-
-@keyframes moveElectron {
-  from {
-    transform: translate(-10vw, 110vh);
-  }
-  to {
-    transform: translate(110vw, -10vh);
-  }
 }
 
 /* HERO SECTION */
@@ -51,8 +21,6 @@ body {
   justify-content: space-between;
   gap: 60px;
   padding: 0 8vw;
-  position: relative;
-  z-index: 2; /* чтобы контент был поверх электронов */
 }
 
 /* LEFT SIDE */
@@ -102,7 +70,7 @@ body {
 }
 
 .card {
-  width: min(1200px, 65vw);
+  width: min(1200px, 65vw);   /* намного больше */
   aspect-ratio: 16 / 10;
   border-radius: 32px;
   overflow: hidden;
@@ -114,7 +82,7 @@ body {
   transform: translateY(-10px);
 }
 
-/* IMAGE AS BACKGROUND */
+/* IMAGE AS BACKGROUND (надёжнее чем <img>) */
 
 .hero-card {
   background-image: url("../img/hero-image.jpg");
@@ -122,7 +90,7 @@ body {
   background-position: center;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE — только реально узкие экраны */
 
 @media (max-width: 900px) {
 
