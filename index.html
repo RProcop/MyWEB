@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Embedded IoT R&D</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0b1626;color:white;overflow-x:hidden;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Segoe UI,sans-serif;
+  background:#0b1626;
+  color:white;
+  overflow-x:hidden;
+}
 
-/* ================= ELECTRON BACKGROUND ================= */
+/* ================= ELECTRONS ================= */
 
 .electrons{
   position:fixed;
@@ -25,13 +28,13 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
   position:absolute;
   width:6px;
   height:6px;
-  background:radial-gradient(circle,#22d3ee,transparent);
+  background:#22d3ee;
   border-radius:50%;
-  opacity:0.5;
-  animation:moveElectron linear infinite;
+  opacity:0.6;
+  animation:move linear infinite;
 }
 
-@keyframes moveElectron{
+@keyframes move{
   from{transform:translate(-10vw,110vh);}
   to{transform:translate(110vw,-10vh);}
 }
@@ -39,152 +42,82 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 /* ================= HERO ================= */
 
 .hero{
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  min-height:100vh;
   padding:0 8%;
   position:relative;
   z-index:2;
-  background:
-    radial-gradient(circle at 75% 35%, rgba(0,150,255,0.15), transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.15), transparent 60%),
-    linear-gradient(135deg,#0b1626,#111f36);
 }
 
 .hero-left{width:45%;}
-
 .hero-left h1{
-  font-size:90px;
-  font-weight:900;
+  font-size:80px;
   line-height:0.9;
-  letter-spacing:-2px;
 }
 
 .subtitle{
   margin-top:25px;
-  font-size:18px;
   opacity:0.8;
-  line-height:1.6;
-}
-
-.cta-group{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
 }
 
 .cta{
-  padding:15px 35px;
+  margin-top:40px;
+  padding:14px 30px;
   border-radius:50px;
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
-  font-weight:600;
-  color:white;
-  border:0;
+  background:#22d3ee;
+  color:#0f172a;
+  border:none;
   cursor:pointer;
-  box-shadow:0 10px 40px rgba(0,140,255,0.5);
-  transition:0.4s ease;
+  font-weight:bold;
 }
 
 .cta:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 60px rgba(0,140,255,0.7);
+  transform:scale(1.05);
 }
 
-.cta.secondary{
-  background:transparent;
-  color:#22d3ee;
-  border:2px solid #22d3ee;
-  box-shadow:none;
+.hero-right{
+  width:50%;
 }
 
-.cta.secondary:hover{
-  background:#22d3ee;
-  color:#0f172a;
-}
-
-/* CARD */
-
-.hero-right{width:50%;display:flex;align-items:center;justify-content:center;}
-
-.floating-card{
-  width:90%;
-  max-width:900px;
-  height:520px;
-  border-radius:42px;
-  overflow:hidden;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(25px);
-  box-shadow:0 70px 180px rgba(0,0,0,0.75);
-}
-
-.floating-card img{
+.card{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  height:400px;
+  background:#1e293b;
+  border-radius:30px;
 }
 
 /* ================= MODAL ================= */
 
-.modal-backdrop{
+.modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(8px);
-  display:flex;
+  background:rgba(0,0,0,0.7);
+  display:none;
   align-items:center;
   justify-content:center;
-  z-index:9999;
-  opacity:0;
-  visibility:hidden;
-  transition:0.3s ease;
+  z-index:999;
 }
 
-.modal-backdrop.open{
-  opacity:1;
-  visibility:visible;
-}
-
-.modal{
-  width:90%;
-  max-width:520px;
+.modal-content{
   background:#111f36;
-  border-radius:20px;
   padding:30px;
-  transform:scale(0.9);
-  transition:0.3s ease;
+  border-radius:20px;
+  width:90%;
+  max-width:500px;
 }
 
-.modal-backdrop.open .modal{
-  transform:scale(1);
-}
-
-.modal input,
-.modal textarea{
+.modal-content input,
+.modal-content textarea{
   width:100%;
-  padding:14px;
   margin-bottom:15px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.1);
-  background:rgba(255,255,255,0.05);
-  color:white;
-}
-
-.modal button{
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
-  color:white;
-  cursor:pointer;
+  padding:10px;
 }
 
 .close{
   float:right;
   cursor:pointer;
-  font-size:20px;
 }
 </style>
 </head>
@@ -194,7 +127,6 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 <div class="electrons" id="electrons"></div>
 
 <section class="hero">
-
   <div class="hero-left">
     <h1>
       EMBEDDED<br>
@@ -206,28 +138,21 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 
     <p class="subtitle">
       Engineering-driven IoT systems.<br>
-      Reliable hardware & firmware solutions.<br>
       3D Printing & Modeling.
     </p>
 
-    <div class="cta-group">
-      <button class="cta">View Projects</button>
-      <button class="cta secondary" id="openContacts">Contact me</button>
-    </div>
+    <button class="cta" onclick="openModal()">Contact me</button>
   </div>
 
   <div class="hero-right">
-    <div class="floating-card">
-      <img src="assets/img/hero-image.jpg" alt="Engineering">
-    </div>
+    <div class="card"></div>
   </div>
-
 </section>
 
-<!-- CONTACT MODAL -->
-<div class="modal-backdrop" id="contactModal">
-  <div class="modal">
-    <span class="close" id="closeContacts">✕</span>
+<!-- MODAL -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">✕</span>
     <h2>Contact me</h2>
 
     <form action="https://formspree.io/f/meelzrvv" method="POST">
@@ -240,19 +165,27 @@ body{background:#0b1626;color:white;overflow-x:hidden;}
 </div>
 
 <script>
-// ELECTRONS
+/* ELECTRONS */
 const container=document.getElementById("electrons");
-for(let i=0;i<25;i++){
+for(let i=0;i<30;i++){
   const el=document.createElement("div");
-  el.classList.add("electron");
+  el.className="electron";
   el.style.left=Math.random()*100+"vw";
   el.style.top=Math.random()*100+"vh";
-  el.style.animationDuration=(10+Math.random()*15)+"s";
+  el.style.animationDuration=(8+Math.random()*12)+"s";
   el.style.animationDelay=(-Math.random()*20)+"s";
   container.appendChild(el);
 }
 
-// MODAL
-const modal=document.getElementById("contactModal");
-const openBtn=document.getElementById("openContacts");
-const closeBtn=document.getElementById("
+/* MODAL */
+function openModal(){
+  document.getElementById("contactModal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("contactModal").style.display="none";
+}
+</script>
+
+</body>
+</html>
