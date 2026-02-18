@@ -70,11 +70,11 @@ body {
 }
 
 .card {
-  width: min(720px, 42vw);
+  width: min(1200px, 65vw);   /* намного больше */
   aspect-ratio: 16 / 10;
-  border-radius: 22px;
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  box-shadow: 0 60px 160px rgba(0,0,0,0.8);
   transition: 0.4s ease;
 }
 
