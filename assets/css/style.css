@@ -110,5 +110,20 @@ body {
     width: 92vw;
     max-width: 520px;
   }
+/* ================= FOOTER ================= */
+
+.site-footer{
+  padding:40px 8%;
+  text-align:center;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));
+  font-size:14px;
+  opacity:0.7;
+  letter-spacing:0.5px;
+}
+
+.footer-content{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:20px;
+}
 
 }
