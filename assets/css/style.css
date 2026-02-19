@@ -364,7 +364,7 @@ textarea.field{
   backdrop-filter: blur(10px);
   background: rgba(11, 22, 38, 0.55);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: relative; /* важно */
+  position: relative;
 }
 
 .header-inner{
@@ -398,12 +398,13 @@ textarea.field{
   font-size: 14px;
 }
 
-/* язык в углу */
+/* язык в правом углу экрана */
 .lang-switch{
   position: absolute;
   top: 14px;
-  right: 6px; /* меняй 6px если нужно ближе/дальше */
+  right: 2px; /* уменьши до 4px или 2px если нужно ближе к краю */
 }
+
 
 
 
