@@ -380,3 +380,19 @@ textarea.field{
     justify-content:center;
   }
 }
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  background:#08111e; /* чуть темнее основного */
+  padding:22px 0;
+  text-align:center;
+  margin-top:auto;
+}
+
+.footer-content{
+  color:#8a94a6; /* серый текст */
+  font-size:14px;
+  letter-spacing:0.5px;
+}
+
