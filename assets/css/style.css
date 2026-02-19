@@ -90,4 +90,49 @@ body {
   border-radius: 36px;
   overflow: hidden;
   box-shadow:
-    0
+    0 80px 200px rgba(0,0,0,0.75),
+    0 0 0 1px rgba(255,255,255,0.04);
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+}
+
+/* IMAGE BACKGROUND */
+
+.hero-card {
+  background-image: url("../img/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 6vw 50px;
+    gap: 50px;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+
+  .card {
+    width: 92vw;
+    max-width: 520px;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(48px, 10vw, 70px);
+  }
+
+}
