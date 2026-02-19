@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (lang === "ua") {
         document.querySelector(".hero-left h1").innerHTML =
-          "ВБУДОВАНІ<br>IoT<br>R&D<br>3D Друк<br>Моделювання";
+          "ВБУДОВАНІ<br>РІШЕННЯ<br>НДДКР<br>3D Друк<br>Моделювання";
 
         document.querySelector(".subtitle").innerHTML =
-          "Інженерні IoT системи.<br>Надійні hardware & firmware рішення.<br>3D Друк та моделювання.";
+          "Інженерні IoT системи.<br>Надійні апаратні & програмні рішення.<br>3D Друк та моделювання.";
 
         currentLangLabel.textContent = "UA";
       }
