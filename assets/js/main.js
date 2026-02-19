@@ -7,48 +7,48 @@ function closeContact() {
   document.getElementById("contactModal").style.display = "none";
 }
 
-/* ================= LANGUAGE SWITCH LOGIC ================= */
+/* ================= LANGUAGE SWITCH (PRO) ================= */
 
-const langToggle = document.getElementById('langToggle');
-const langDropdown = document.getElementById('langDropdown');
-const langOptions = document.querySelectorAll('.lang-option');
+const langSwitch = document.getElementById("langSwitch");
+const langCurrent = document.getElementById("langCurrent");
+const currentLangLabel = document.getElementById("currentLang");
+const langItems = document.querySelectorAll(".lang-item");
 
-langToggle.addEventListener('click', () => {
-  langDropdown.classList.toggle('open');
+langCurrent.addEventListener("click", () => {
+  langSwitch.classList.toggle("open");
 });
 
-document.addEventListener('click', (e)=>{
-  if(!e.target.closest('.lang-switch')){
-    langDropdown.classList.remove('open');
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".lang-switch")) {
+    langSwitch.classList.remove("open");
   }
 });
 
-langOptions.forEach(option=>{
-  option.addEventListener('click', ()=>{
-    const selectedLang = option.dataset.lang;
+langItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const lang = item.dataset.lang;
 
-    // Меняем текст заголовка как пример
-    if(selectedLang === "ua"){
-      document.querySelector('.hero-left h1').innerHTML =
+    if (lang === "ua") {
+      document.querySelector(".hero-left h1").innerHTML =
         "ВБУДОВАНІ<br>IoT<br>R&D<br>3D Друк<br>Моделювання";
 
-      document.querySelector('.subtitle').innerHTML =
+      document.querySelector(".subtitle").innerHTML =
         "Інженерні IoT системи.<br>Надійні hardware & firmware рішення.<br>3D Друк та моделювання.";
 
-      langToggle.textContent = "UA ▾";
+      currentLangLabel.textContent = "UA";
     }
 
-    if(selectedLang === "en"){
-      document.querySelector('.hero-left h1').innerHTML =
+    if (lang === "en") {
+      document.querySelector(".hero-left h1").innerHTML =
         "EMBEDDED<br>IOT<br>R&D<br>3D Printing<br>Modeling";
 
-      document.querySelector('.subtitle').innerHTML =
+      document.querySelector(".subtitle").innerHTML =
         "Engineering-driven IoT systems.<br>Reliable hardware & firmware solutions.<br>3D Printing & Modeling.";
 
-      langToggle.textContent = "EN ▾";
+      currentLangLabel.textContent = "EN";
     }
 
-    langDropdown.classList.remove('open');
+    langSwitch.classList.remove("open");
   });
 });
 
