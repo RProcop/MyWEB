@@ -373,10 +373,9 @@ textarea.field{
   padding: 14px 6%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* язык уходит вправо */
+  justify-content: space-between; /* ← ЭТО ДВИГАЕТ ЯЗЫК */
 }
 
-/* если язык всё равно не доходит до края — включи это */
 .header-right{
   margin-left: auto;
 }
@@ -403,6 +402,7 @@ textarea.field{
   opacity: 0.95;
   font-size: 14px;
 }
+
 
 
 
@@ -511,25 +511,4 @@ textarea.field{
   .brand-text{ display:none; }
   .lang-menu{ width: 200px; }
 }
-
-/* ===== FORCE LANG TO TOP-RIGHT ===== */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1500;
-  backdrop-filter: blur(10px);
-  background: rgba(11, 22, 38, 0.55);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: relative; /* якорь для absolute */
-}
-
-/* контейнер как был */
-.header-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 0 14px 6%;
-  display: flex;
-  align-items: center;
-}
-
 
