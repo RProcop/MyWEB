@@ -294,6 +294,102 @@ body{
 
 </section>
 
+  <!-- ================= CONTACT MODAL ================= -->
+<div class="modal-backdrop" id="contactModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Contact me</div>
+      <button class="modal-close" id="closeContacts" type="button" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-hint">
+        Send a message — it will be delivered to me.
+      </div>
+
+      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
+        <div class="form-grid">
+          <input class="field" name="name" type="text" placeholder="Your name" required>
+          <input class="field" name="email" type="email" placeholder="Email" required>
+          <textarea class="field" name="message" placeholder="Message" required></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="New message from portfolio site">
+
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="cancelBtn" type="button">Cancel</button>
+          <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+
+        <div class="status" id="status"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+const openBtn = document.getElementById('openContacts');
+const modal = document.getElementById('contactModal');
+const closeBtn = document.getElementById('closeContacts');
+const cancelBtn = document.getElementById('cancelBtn');
+
+function openModal(){
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  const first = modal.querySelector('input, textarea, button');
+  if(first) first.focus();
+}
+
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  openBtn.focus();
+}
+
+openBtn.addEventListener('click', openModal);
+closeBtn.addEventListener('click', closeModal);
+cancelBtn.addEventListener('click', closeModal);
+
+modal.addEventListener('click', (e)=>{
+  if(e.target === modal) closeModal();
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});
+
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('status');
+
+form.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  statusEl.className = 'status';
+  statusEl.style.display = 'block';
+  statusEl.textContent = 'Sending...';
+
+  try{
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if(res.ok){
+      statusEl.className = 'status ok';
+      statusEl.textContent = 'Sent! I will reply soon.';
+      form.reset();
+      setTimeout(closeModal, 900);
+    }else{
+      statusEl.className = 'status err';
+      statusEl.textContent = 'Error. Please try again later.';
+    }
+  }catch(err){
+    statusEl.className = 'status err';
+    statusEl.textContent = 'Network error. Please try again later.';
+  }
+});
+</script>
+
 <footer class="site-footer">
   © 2026 PRV-studio. All rights reserved.
 </footer>
