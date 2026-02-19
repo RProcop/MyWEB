@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
+/* ================= BASE ================= */
+
 *{
   margin:0;
   padding:0;
@@ -23,7 +25,6 @@ body{
   background:#0b1626;
   color:white;
   overflow-x:hidden;
-
   display:flex;
   flex-direction:column;
   min-height:100vh;
@@ -32,181 +33,34 @@ body{
 /* ================= HERO ================= */
 
 .hero{
+  flex:1;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  flex:1; /* вместо min-height:100vh */
   padding:0 8%;
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 75% 35%, rgba(0,150,255,0.15), transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.15), transparent 60%),
-    linear-gradient(135deg,#0b1626,#111f36);
 }
 
-/* Мягкое движение фона */
-.hero::before{
-  content:"";
-  position:absolute;
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle, rgba(0,200,255,0.25), transparent 70%);
-  top:-250px;
-  right:-200px;
-  filter:blur(120px);
-  animation:floatBg 14s ease-in-out infinite alternate;
-}
-
-@keyframes floatBg{
-  0%{ transform:translateY(0); }
-  100%{ transform:translateY(100px); }
-}
-
-/* ================= LEFT ================= */
-
-.hero-left{
-  width:45%;
-  z-index:2;
-}
-
-.hero-left h1{
-  font-size:90px;
-  font-weight:900;
-  line-height:0.9;
-  letter-spacing:-2px;
-}
-
-.subtitle{
-  margin-top:25px;
-  font-size:18px;
-  opacity:0.75;
-  line-height:1.6;
-}
-
-/* ===== BUTTONS ===== */
+/* ================= BUTTON ================= */
 
 .cta-group{
   margin-top:40px;
   display:flex;
   gap:20px;
-  flex-wrap:wrap;
 }
 
 .cta{
-  display:inline-block;
   padding:15px 35px;
   border-radius:50px;
   background:linear-gradient(90deg,#00c6ff,#0072ff);
-  font-weight:600;
-  text-decoration:none;
   color:white;
   border:0;
   cursor:pointer;
-  box-shadow:0 10px 40px rgba(0,140,255,0.5);
-  transition:0.4s ease;
-}
-
-.cta:hover{
-  transform:translateY(-4px);
-  box-shadow:0 20px 60px rgba(0,140,255,0.7);
 }
 
 .cta.secondary{
   background:transparent;
-  color:#22d3ee;
   border:2px solid #22d3ee;
-  box-shadow:none;
-}
-
-.cta.secondary:hover{
-  background:#22d3ee;
-  color:#0f172a;
-  transform:translateY(-4px);
-}
-
-/* ================= RIGHT ================= */
-
-.hero-right{
-  position:relative;
-  width:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.bg-text{
-  position:absolute;
-  right:0;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:220px;
-  font-weight:900;
-  line-height:0.8;
-  text-align:right;
-  color:rgba(255,255,255,0.03);
-  pointer-events:none;
-}
-
-.accent-glow{
-  position:absolute;
-  right:-150px;
-  width:350px;
-  height:100%;
-  background:linear-gradient(to bottom, transparent, rgba(255,120,0,0.5), transparent);
-  filter:blur(90px);
-}
-
-/* ================= CARD ================= */
-
-.floating-card{
-  position:relative;
-  width:90%;
-  max-width:900px;
-  height:520px;
-  border-radius:42px;
-  overflow:hidden;
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(25px);
-  box-shadow:
-    0 70px 180px rgba(0,0,0,0.75),
-    0 0 0 1px rgba(255,255,255,0.05);
-  animation:floatCard 7s ease-in-out infinite alternate;
-  transition:transform 0.5s ease;
-}
-
-@keyframes floatCard{
-  0%{ transform:translateY(0px); }
-  100%{ transform:translateY(-18px); }
-}
-
-.floating-card::before{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:42px;
-  background:linear-gradient(135deg,#00c6ff,#ff6a00);
-  opacity:0.35;
-  filter:blur(40px);
-  z-index:-1;
-}
-
-.floating-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:42px;
-  animation:autoZoom 22s ease-in-out infinite alternate;
-  transform-origin:center;
-}
-
-@keyframes autoZoom{
-  0%{ transform:scale(1.1); }
-  100%{ transform:scale(1.25); }
-}
-
-.floating-card:hover{
-  transform:scale(1.04);
+  color:#22d3ee;
 }
 
 /* ================= FOOTER ================= */
@@ -216,38 +70,79 @@ body{
   padding:20px 0;
   font-size:14px;
   opacity:0.6;
-  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MODAL ================= */
 
-@media(max-width:1200px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:80px 5%;
-  }
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
 
-  .hero-left, .hero-right{
-    width:100%;
-  }
+.modal-backdrop.open{
+  display:flex;
+}
 
-  .hero-left h1{
-    font-size:60px;
-  }
+.modal{
+  width:90%;
+  max-width:500px;
+  background:#111f36;
+  padding:30px;
+  border-radius:20px;
+}
 
-  .bg-text{
-    display:none;
-  }
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
 
-  .floating-card{
-    height:420px;
-    margin-top:50px;
-  }
+.modal-close{
+  background:none;
+  border:0;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
 
-  .cta-group{
-    justify-content:center;
-  }
+.field{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.05);
+  color:white;
+}
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+.btn{
+  padding:10px 20px;
+  border-radius:20px;
+  border:0;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:#00c6ff;
+  color:white;
+}
+
+.btn-ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.3);
+  color:white;
 }
 </style>
 </head>
@@ -256,146 +151,75 @@ body{
 
 <section class="hero">
 
-  <div class="hero-left">
-    <h1>
-      EMBEDDED<br>
-      IOT<br>
-      R&D<br>
-      3D Printing<br>
-      Modeling
-    </h1>
-
-    <p class="subtitle">
-      Engineering-driven IoT systems.<br>
-      Reliable hardware & firmware solutions.<br>
-      3D Printing & Modeling.
-    </p>
+  <div>
+    <h1>EMBEDDED IOT R&D</h1>
 
     <div class="cta-group">
       <a href="#" class="cta">View Projects</a>
-      <button type="button" class="cta secondary" id="openContacts">
-      Contact me
+      <button type="button" class="cta secondary" id="openModalBtn">
+        Contact me
       </button>
-
     </div>
-  </div>
-
-  <div class="hero-right">
-
-    <div class="bg-text">
-      IOT<br>
-      R&D
-    </div>
-
-    <div class="accent-glow"></div>
-
-    <div class="floating-card">
-      <img src="assets/img/hero-image.jpg" alt="Engineering">
-    </div>
-
   </div>
 
 </section>
 
-  <!-- ================= CONTACT MODAL ================= -->
-<div class="modal-backdrop" id="contactModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<!-- ================= MODAL ================= -->
+
+<div class="modal-backdrop" id="contactModal">
+  <div class="modal">
     <div class="modal-header">
-      <div class="modal-title" id="modalTitle">Contact me</div>
-      <button class="modal-close" id="closeContacts" type="button" aria-label="Close">✕</button>
+      <h3>Contact me</h3>
+      <button class="modal-close" id="closeModalBtn">✕</button>
     </div>
 
-    <div class="modal-body">
-      <div class="modal-hint">
-        Send a message — it will be delivered to me.
+    <form>
+      <input class="field" type="text" placeholder="Your name" required>
+      <input class="field" type="email" placeholder="Email" required>
+      <textarea class="field" placeholder="Message" required></textarea>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn btn-primary">Send</button>
       </div>
-
-      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
-        <div class="form-grid">
-          <input class="field" name="name" type="text" placeholder="Your name" required>
-          <input class="field" name="email" type="email" placeholder="Email" required>
-          <textarea class="field" name="message" placeholder="Message" required></textarea>
-        </div>
-
-        <input type="hidden" name="_subject" value="New message from portfolio site">
-
-        <div class="modal-actions">
-          <button class="btn btn-ghost" id="cancelBtn" type="button">Cancel</button>
-          <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-
-        <div class="status" id="status"></div>
-      </form>
-    </div>
+    </form>
   </div>
 </div>
-
-<script>
-const openBtn = document.getElementById('openContacts');
-const modal = document.getElementById('contactModal');
-const closeBtn = document.getElementById('closeContacts');
-const cancelBtn = document.getElementById('cancelBtn');
-
-function openModal(){
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
-  const first = modal.querySelector('input, textarea, button');
-  if(first) first.focus();
-}
-
-function closeModal(){
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
-  openBtn.focus();
-}
-
-openBtn.addEventListener('click', openModal);
-closeBtn.addEventListener('click', closeModal);
-cancelBtn.addEventListener('click', closeModal);
-
-modal.addEventListener('click', (e)=>{
-  if(e.target === modal) closeModal();
-});
-
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-});
-
-const form = document.getElementById('contactForm');
-const statusEl = document.getElementById('status');
-
-form.addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  statusEl.className = 'status';
-  statusEl.style.display = 'block';
-  statusEl.textContent = 'Sending...';
-
-  try{
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if(res.ok){
-      statusEl.className = 'status ok';
-      statusEl.textContent = 'Sent! I will reply soon.';
-      form.reset();
-      setTimeout(closeModal, 900);
-    }else{
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Error. Please try again later.';
-    }
-  }catch(err){
-    statusEl.className = 'status err';
-    statusEl.textContent = 'Network error. Please try again later.';
-  }
-});
-</script>
 
 <footer class="site-footer">
   © 2026 PRV-studio. All rights reserved.
 </footer>
+
+<script>
+const modal = document.getElementById('contactModal');
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+
+openBtn.addEventListener('click', () => {
+  modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('open');
+});
+
+cancelBtn.addEventListener('click', () => {
+  modal.classList.remove('open');
+});
+
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    modal.classList.remove('open');
+  }
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape'){
+    modal.classList.remove('open');
+  }
+});
+</script>
 
 </body>
 </html>
