@@ -5,19 +5,27 @@
   font-family:'Inter',sans-serif;
 }
 
+html, body{
+  height:100%;
+}
+
 body{
   background:#0b1626;
   color:white;
   overflow-x:hidden;
+
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* ================= HERO ================= */
 
 .hero{
+  flex:1; /* вместо min-height:100vh */
   display:flex;
   align-items:center;
   justify-content:space-between;
-  min-height:100vh;
   padding:0 8%;
   position:relative;
   overflow:hidden;
@@ -94,8 +102,6 @@ body{
   box-shadow:0 20px 60px rgba(0,140,255,0.7);
 }
 
-/* Secondary button */
-
 .cta.secondary{
   background:transparent;
   color:#22d3ee;
@@ -119,7 +125,6 @@ body{
   justify-content:center;
 }
 
-/* Фоновый текст */
 .bg-text{
   position:absolute;
   right:0;
@@ -133,7 +138,6 @@ body{
   pointer-events:none;
 }
 
-/* Акцентный glow */
 .accent-glow{
   position:absolute;
   right:-150px;
@@ -195,160 +199,19 @@ body{
   transform:scale(1.04);
 }
 
-/* ================= MODAL CONTACTS ================= */
+/* ================= FOOTER ================= */
 
-.modal-backdrop{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(8px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:24px;
-  z-index:9999;
+.site-footer{
+  background:#08111e;
+  padding:22px 0;
+  text-align:center;
 }
 
-.modal-backdrop.open{ display:flex; }
-
-.modal{
-  width:min(560px, 94vw);
-  border-radius:24px;
-  overflow:hidden;
-  background:rgba(17,31,54,0.82);
-  border:1px solid rgba(255,255,255,0.10);
-  box-shadow:0 60px 180px rgba(0,0,0,0.75);
-  transform:translateY(10px);
-  animation:modalIn .22s ease forwards;
-}
-
-@keyframes modalIn{
-  to{ transform:translateY(0); }
-}
-
-.modal-header{
-  padding:18px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(90deg, rgba(0,198,255,0.18), rgba(255,106,0,0.12));
-}
-
-.modal-title{
-  font-weight:800;
-  font-size:18px;
-  letter-spacing:0.2px;
-}
-
-.modal-close{
-  width:40px;
-  height:40px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.08);
-  color:white;
-  cursor:pointer;
-  transition:0.2s ease;
-}
-
-.modal-close:hover{
-  transform:scale(1.06);
-  background:rgba(255,255,255,0.12);
-}
-
-.modal-body{
-  padding:18px 20px 22px;
-}
-
-.modal-hint{
+.footer-content{
+  color:#8a94a6;
   font-size:14px;
-  opacity:0.75;
-  line-height:1.5;
-  margin-bottom:14px;
+  letter-spacing:0.5px;
 }
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-@media (max-width:520px){
-  .form-grid{ grid-template-columns:1fr; }
-}
-
-.field{
-  width:100%;
-  padding:14px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.06);
-  color:white;
-  outline:none;
-}
-
-.field::placeholder{ color:rgba(255,255,255,0.55); }
-
-.field:focus{
-  border-color:rgba(34,211,238,0.75);
-  box-shadow:0 0 0 4px rgba(34,211,238,0.12);
-}
-
-textarea.field{
-  min-height:120px;
-  resize:vertical;
-  grid-column:1 / -1;
-}
-
-.modal-actions{
-  margin-top:14px;
-  display:flex;
-  gap:12px;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:12px 18px;
-  border-radius:14px;
-  font-weight:700;
-  cursor:pointer;
-  border:0;
-  transition:0.25s ease;
-}
-
-.btn-primary{
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
-  color:white;
-  box-shadow:0 12px 40px rgba(0,140,255,0.35);
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 18px 55px rgba(0,140,255,0.5);
-}
-
-.btn-ghost{
-  background:transparent;
-  color:#22d3ee;
-  border:2px solid #22d3ee;
-}
-
-.btn-ghost:hover{
-  background:#22d3ee;
-  color:#0f172a;
-  transform:translateY(-2px);
-}
-
-.status{
-  margin-top:12px;
-  font-size:14px;
-  opacity:0.85;
-  display:none;
-}
-
-.status.ok{ color:#7CFFB2; display:block; }
-.status.err{ color:#FF8A8A; display:block; }
 
 /* ================= RESPONSIVE ================= */
 
@@ -380,19 +243,3 @@ textarea.field{
     justify-content:center;
   }
 }
-
-/* ================= FOOTER ================= */
-
-.site-footer{
-  background:#08111e; /* чуть темнее основного */
-  padding:22px 0;
-  text-align:center;
-  margin-top:auto;
-}
-
-.footer-content{
-  color:#8a94a6; /* серый текст */
-  font-size:14px;
-  letter-spacing:0.5px;
-}
-
