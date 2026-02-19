@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     item.addEventListener("click", () => {
       const lang = item.dataset.lang;
 
-      if (lang === "ua") {
+      if (lang === "Укр.") {
         document.querySelector(".hero-left h1").innerHTML =
           "ВБУДОВАНІ<br>РІШЕННЯ<br>НДДКР<br>3D Друк<br>Моделювання";
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentLangLabel.textContent = "UA";
       }
 
-      if (lang === "en") {
+      if (lang === "EN") {
         document.querySelector(".hero-left h1").innerHTML =
           "EMBEDDED<br>IOT<br>R&D<br>3D Printing<br>Modeling";
 
