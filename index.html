@@ -19,25 +19,22 @@ html, body{
   height:100%;
 }
 
-/* ✅ ВАЖНО: делаем body flex-контейнером */
 body{
   background:#0b1626;
   color:white;
   overflow-x:hidden;
-
-  display:flex;            /* ✅ добавлено */
-  flex-direction:column;   /* ✅ добавлено */
-  min-height:100vh;        /* ✅ добавлено */
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
 
 /* ================= HERO ================= */
 
-/* ✅ ВАЖНО: убираем min-height:100vh и даём секции занять остаток */
 .hero{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  flex:1;                  /* ✅ добавлено */
+  flex:1;
   padding:0 8%;
   position:relative;
   overflow:hidden;
@@ -47,7 +44,6 @@ body{
     linear-gradient(135deg,#0b1626,#111f36);
 }
 
-/* Мягкое движение фона */
 .hero::before{
   content:"";
   position:absolute;
@@ -65,12 +61,7 @@ body{
   100%{ transform:translateY(100px); }
 }
 
-/* ================= LEFT ================= */
-
-.hero-left{
-  width:45%;
-  z-index:2;
-}
+.hero-left{ width:45%; z-index:2; }
 
 .hero-left h1{
   font-size:90px;
@@ -85,8 +76,6 @@ body{
   opacity:0.75;
   line-height:1.6;
 }
-
-/* ===== BUTTONS ===== */
 
 .cta-group{
   margin-top:40px;
@@ -127,8 +116,6 @@ body{
   transform:translateY(-4px);
 }
 
-/* ================= RIGHT ================= */
-
 .hero-right{
   position:relative;
   width:50%;
@@ -159,8 +146,6 @@ body{
   filter:blur(90px);
 }
 
-/* ================= CARD ================= */
-
 .floating-card{
   position:relative;
   width:90%;
@@ -170,9 +155,8 @@ body{
   overflow:hidden;
   background:rgba(255,255,255,0.05);
   backdrop-filter:blur(25px);
-  box-shadow:
-    0 70px 180px rgba(0,0,0,0.75),
-    0 0 0 1px rgba(255,255,255,0.05);
+  box-shadow:0 70px 180px rgba(0,0,0,0.75),
+             0 0 0 1px rgba(255,255,255,0.05);
   animation:floatCard 7s ease-in-out infinite alternate;
   transition:transform 0.5s ease;
 }
@@ -182,36 +166,18 @@ body{
   100%{ transform:translateY(-18px); }
 }
 
-.floating-card::before{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:42px;
-  background:linear-gradient(135deg,#00c6ff,#ff6a00);
-  opacity:0.35;
-  filter:blur(40px);
-  z-index:-1;
-}
-
 .floating-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   border-radius:42px;
   animation:autoZoom 22s ease-in-out infinite alternate;
-  transform-origin:center;
 }
 
 @keyframes autoZoom{
   0%{ transform:scale(1.1); }
   100%{ transform:scale(1.25); }
 }
-
-.floating-card:hover{
-  transform:scale(1.04);
-}
-
-/* ================= MODAL CONTACTS ================= */
 
 .modal-backdrop{
   position:fixed;
@@ -227,151 +193,7 @@ body{
 
 .modal-backdrop.open{ display:flex; }
 
-/* ✅ когда модалка открыта — запрещаем скролл страницы */
-body.modal-open{
-  overflow:hidden;
-}
-
-.modal{
-  width:min(560px, 94vw);
-  border-radius:24px;
-  overflow:hidden;
-  background:rgba(17,31,54,0.82);
-  border:1px solid rgba(255,255,255,0.10);
-  box-shadow:0 60px 180px rgba(0,0,0,0.75);
-  transform:translateY(10px);
-  animation:modalIn .22s ease forwards;
-}
-
-@keyframes modalIn{
-  to{ transform:translateY(0); }
-}
-
-.modal-header{
-  padding:18px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(90deg, rgba(0,198,255,0.18), rgba(255,106,0,0.12));
-}
-
-.modal-title{
-  font-weight:800;
-  font-size:18px;
-  letter-spacing:0.2px;
-}
-
-.modal-close{
-  width:40px;
-  height:40px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.08);
-  color:white;
-  cursor:pointer;
-  transition:0.2s ease;
-}
-
-.modal-close:hover{
-  transform:scale(1.06);
-  background:rgba(255,255,255,0.12);
-}
-
-.modal-body{
-  padding:18px 20px 22px;
-}
-
-.modal-hint{
-  font-size:14px;
-  opacity:0.75;
-  line-height:1.5;
-  margin-bottom:14px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-@media (max-width:520px){
-  .form-grid{ grid-template-columns:1fr; }
-}
-
-.field{
-  width:100%;
-  padding:14px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.06);
-  color:white;
-  outline:none;
-}
-
-.field::placeholder{ color:rgba(255,255,255,0.55); }
-
-.field:focus{
-  border-color:rgba(34,211,238,0.75);
-  box-shadow:0 0 0 4px rgba(34,211,238,0.12);
-}
-
-textarea.field{
-  min-height:120px;
-  resize:vertical;
-  grid-column:1 / -1;
-}
-
-.modal-actions{
-  margin-top:14px;
-  display:flex;
-  gap:12px;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:12px 18px;
-  border-radius:14px;
-  font-weight:700;
-  cursor:pointer;
-  border:0;
-  transition:0.25s ease;
-}
-
-.btn-primary{
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
-  color:white;
-  box-shadow:0 12px 40px rgba(0,140,255,0.35);
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 18px 55px rgba(0,140,255,0.5);
-}
-
-.btn-ghost{
-  background:transparent;
-  color:#22d3ee;
-  border:2px solid #22d3ee;
-}
-
-.btn-ghost:hover{
-  background:#22d3ee;
-  color:#0f172a;
-  transform:translateY(-2px);
-}
-
-.status{
-  margin-top:12px;
-  font-size:14px;
-  opacity:0.85;
-  display:none;
-}
-
-.status.ok{ color:#7CFFB2; display:block; }
-.status.err{ color:#FF8A8A; display:block; }
-
-/* ================= FOOTER ================= */
+body.modal-open{ overflow:hidden; }
 
 .site-footer{
   text-align:center;
@@ -380,57 +202,23 @@ textarea.field{
   opacity:0.6;
   background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));
 }
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1200px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:80px 5%;
-  }
-
-  .hero-left, .hero-right{
-    width:100%;
-  }
-
-  .hero-left h1{
-    font-size:60px;
-  }
-
-  .bg-text{
-    display:none;
-  }
-
-  .floating-card{
-    height:420px;
-    margin-top:50px;
-  }
-
-  .cta-group{
-    justify-content:center;
-  }
-}
 </style>
 </head>
 
 <body>
-<!-- ================= LANGUAGE SWITCH ================= -->
+
 <div class="lang-switch" id="langSwitch">
   <div class="lang-current" id="langCurrent">
     <span id="currentLang">EN</span>
     <span class="lang-arrow">▾</span>
   </div>
-
   <div class="lang-menu">
     <div class="lang-item" data-lang="en">English</div>
     <div class="lang-item" data-lang="ua">Українська</div>
   </div>
 </div>
 
-
 <section class="hero">
-
   <div class="hero-left">
     <h1>
       EMBEDDED<br>
@@ -453,127 +241,23 @@ textarea.field{
   </div>
 
   <div class="hero-right">
-    <div class="bg-text">
-      IOT<br>
-      R&D
-    </div>
-
+    <div class="bg-text">IOT<br>R&D</div>
     <div class="accent-glow"></div>
-
     <div class="floating-card">
       <img src="assets/img/hero-image.jpg" alt="Engineering">
     </div>
   </div>
-
 </section>
 
-<!-- ================= CONTACT MODAL ================= -->
-<div class="modal-backdrop" id="contactModal" aria-hidden="true">
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-header">
-      <div class="modal-title" id="modalTitle">Contact me</div>
-      <button class="modal-close" id="closeContacts" type="button" aria-label="Close">✕</button>
-    </div>
-
-    <div class="modal-body">
-      <div class="modal-hint">
-        Send a message — it will be delivered to me.
-      </div>
-
-      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
-        <div class="form-grid">
-          <input class="field" name="name" type="text" placeholder="Your name" required>
-          <input class="field" name="email" type="email" placeholder="Email" required>
-          <textarea class="field" name="message" placeholder="Message" required></textarea>
-        </div>
-
-        <input type="hidden" name="_subject" value="New message from portfolio site">
-
-        <div class="modal-actions">
-          <button class="btn btn-ghost" id="cancelBtn" type="button">Cancel</button>
-          <button class="btn btn-primary" type="submit">Send</button>
-        </div>
-
-        <div class="status" id="status"></div>
-      </form>
-    </div>
-  </div>
-</div>
-
 <script>
-const openBtn = document.getElementById('openContacts');
-const modal = document.getElementById('contactModal');
-const closeBtn = document.getElementById('closeContacts');
-const cancelBtn = document.getElementById('cancelBtn');
+/* ================= LANGUAGE SWITCH ================= */
 
-function openModal(){
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open'); /* ✅ добавлено */
-  const first = modal.querySelector('input, textarea, button');
-  if(first) first.focus();
-}
+const langSwitch = document.getElementById("langSwitch");
+const langCurrent = document.getElementById("langCurrent");
+const currentLangLabel = document.getElementById("currentLang");
+const langItems = document.querySelectorAll(".lang-item");
 
-function closeModal(){
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open'); /* ✅ добавлено */
-  openBtn.focus();
-}
-
-openBtn.addEventListener('click', openModal);
-closeBtn.addEventListener('click', closeModal);
-cancelBtn.addEventListener('click', closeModal);
-
-modal.addEventListener('click', (e)=>{
-  if(e.target === modal) closeModal();
-});
-
-document.addEventListener('keydown', (e)=>{
-  if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-});
-
-const form = document.getElementById('contactForm');
-const statusEl = document.getElementById('status');
-
-form.addEventListener('submit', async (e)=>{
-  e.preventDefault();
-  statusEl.className = 'status';
-  statusEl.style.display = 'block';
-  statusEl.textContent = 'Sending...';
-
-  try{
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if(res.ok){
-      statusEl.className = 'status ok';
-      statusEl.textContent = 'Sent! I will reply soon.';
-      form.reset();
-      setTimeout(closeModal, 900);
-    }else{
-      statusEl.className = 'status err';
-      statusEl.textContent = 'Error. Please try again later.';
-    }
-  }catch(err){
-    statusEl.className = 'status err';
-    statusEl.textContent = 'Network error. Please try again later.';
-  }
-});
-
-  /* ================= LANGUAGE SWITCH ================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  const langSwitch = document.getElementById("langSwitch");
-  const langCurrent = document.getElementById("langCurrent");
-  const currentLangLabel = document.getElementById("currentLang");
-  const langItems = document.querySelectorAll(".lang-item");
-
-  if (!langSwitch || !langCurrent) return;
+if (langSwitch && langCurrent) {
 
   langCurrent.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -612,15 +296,11 @@ document.addEventListener("DOMContentLoaded", () => {
       langSwitch.classList.remove("open");
     });
   });
-
-});
-
+}
 </script>
 
 <footer class="site-footer">
-  <div class="footer-content">
-    © 2026 PRV-studio. All rights reserved.
-  </div>
+  © 2026 PRV-studio. All rights reserved.
 </footer>
 
 </body>
