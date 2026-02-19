@@ -23,10 +23,82 @@ body{
   background:#0b1626;
   color:white;
   overflow-x:hidden;
-
   display:flex;
   flex-direction:column;
   min-height:100vh;
+}
+
+/* ================= LANGUAGE DROPDOWN ================= */
+
+.lang-dropdown{
+  position:fixed;
+  top:28px;
+  right:36px;
+  z-index:2000;
+}
+
+.lang-current{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+  cursor:pointer;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s ease;
+}
+
+.lang-current:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.lang-menu{
+  position:absolute;
+  top:58px;
+  right:0;
+  min-width:110px;
+  background:rgba(17,31,54,0.95);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:14px;
+  padding:6px;
+  display:none;
+  flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  animation:fadeIn 0.18s ease;
+}
+
+.lang-menu.open{
+  display:flex;
+}
+
+.lang-option{
+  background:transparent;
+  border:none;
+  color:rgba(255,255,255,0.8);
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:14px;
+  text-align:left;
+  cursor:pointer;
+  transition:0.25s ease;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.lang-option:hover{
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(-5px);}
+  to{opacity:1; transform:translateY(0);}
 }
 
 /* ================= HERO ================= */
@@ -35,7 +107,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  flex:1; /* вместо min-height:100vh */
+  flex:1;
   padding:0 8%;
   position:relative;
   overflow:hidden;
@@ -45,7 +117,6 @@ body{
     linear-gradient(135deg,#0b1626,#111f36);
 }
 
-/* Мягкое движение фона */
 .hero::before{
   content:"";
   position:absolute;
@@ -62,8 +133,6 @@ body{
   0%{ transform:translateY(0); }
   100%{ transform:translateY(100px); }
 }
-
-/* ================= LEFT ================= */
 
 .hero-left{
   width:45%;
@@ -83,8 +152,6 @@ body{
   opacity:0.75;
   line-height:1.6;
 }
-
-/* ===== BUTTONS ===== */
 
 .cta-group{
   margin-top:40px;
@@ -125,8 +192,6 @@ body{
   transform:translateY(-4px);
 }
 
-/* ================= RIGHT ================= */
-
 .hero-right{
   position:relative;
   width:50%;
@@ -157,8 +222,6 @@ body{
   filter:blur(90px);
 }
 
-/* ================= CARD ================= */
-
 .floating-card{
   position:relative;
   width:90%;
@@ -180,36 +243,12 @@ body{
   100%{ transform:translateY(-18px); }
 }
 
-.floating-card::before{
-  content:"";
-  position:absolute;
-  inset:-4px;
-  border-radius:42px;
-  background:linear-gradient(135deg,#00c6ff,#ff6a00);
-  opacity:0.35;
-  filter:blur(40px);
-  z-index:-1;
-}
-
 .floating-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   border-radius:42px;
-  animation:autoZoom 22s ease-in-out infinite alternate;
-  transform-origin:center;
 }
-
-@keyframes autoZoom{
-  0%{ transform:scale(1.1); }
-  100%{ transform:scale(1.25); }
-}
-
-.floating-card:hover{
-  transform:scale(1.04);
-}
-
-/* ================= FOOTER ================= */
 
 .site-footer{
   text-align:center;
@@ -218,57 +257,24 @@ body{
   opacity:0.6;
   background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));
 }
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1200px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-    padding:80px 5%;
-  }
-
-  .hero-left, .hero-right{
-    width:100%;
-  }
-
-  .hero-left h1{
-    font-size:60px;
-  }
-
-  .bg-text{
-    display:none;
-  }
-
-  .floating-card{
-    height:420px;
-    margin-top:50px;
-  }
-
-  .cta-group{
-    justify-content:center;
-  }
-}
 </style>
 </head>
 
 <body>
-  
-<div class="lang-switch">
-  <button class="lang-btn active" data-lang="en">EN</button>
-  <button class="lang-btn" data-lang="ua">UA</button>
+
+<!-- LANGUAGE SWITCH -->
+<div class="lang-dropdown">
+  <button class="lang-current" id="langToggle">🇬🇧</button>
+  <div class="lang-menu" id="langMenu">
+    <button class="lang-option" data-lang="en">🇬🇧 EN</button>
+    <button class="lang-option" data-lang="ua">🇺🇦 UA</button>
+  </div>
 </div>
 
 <section class="hero">
 
   <div class="hero-left">
-    <h1>
-      EMBEDDED<br>
-      IOT<br>
-      R&D<br>
-      3D Printing<br>
-      Modeling
-    </h1>
+    <h1>EMBEDDED<br>IOT<br>R&D<br>3D Printing<br>Modeling</h1>
 
     <p class="subtitle">
       Engineering-driven IoT systems.<br>
@@ -283,18 +289,11 @@ body{
   </div>
 
   <div class="hero-right">
-
-    <div class="bg-text">
-      IOT<br>
-      R&D
-    </div>
-
+    <div class="bg-text">IOT<br>R&D</div>
     <div class="accent-glow"></div>
-
     <div class="floating-card">
       <img src="assets/img/hero-image.jpg" alt="Engineering">
     </div>
-
   </div>
 
 </section>
@@ -302,6 +301,20 @@ body{
 <footer class="site-footer">
   © 2026 PRV-studio. All rights reserved.
 </footer>
+
+<script>
+const toggle = document.getElementById('langToggle');
+const menu = document.getElementById('langMenu');
+
+toggle.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  menu.classList.toggle('open');
+});
+
+document.addEventListener('click', ()=>{
+  menu.classList.remove('open');
+});
+</script>
 
 </body>
 </html>
