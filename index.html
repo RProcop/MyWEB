@@ -416,13 +416,18 @@ textarea.field{
 
 <body>
 <!-- ================= LANGUAGE SWITCH ================= -->
-<div class="lang-switch">
-  <button class="lang-btn" id="langToggle">EN ▾</button>
-  <div class="lang-dropdown" id="langDropdown">
-    <div class="lang-option" data-lang="en">English</div>
-    <div class="lang-option" data-lang="ua">Українська</div>
+<div class="lang-switch" id="langSwitch">
+  <div class="lang-current" id="langCurrent">
+    <span id="currentLang">EN</span>
+    <span class="lang-arrow">▾</span>
+  </div>
+
+  <div class="lang-menu">
+    <div class="lang-item" data-lang="en">English</div>
+    <div class="lang-item" data-lang="ua">Українська</div>
   </div>
 </div>
+
 
 <section class="hero">
 
