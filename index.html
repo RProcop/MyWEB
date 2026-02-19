@@ -12,41 +12,44 @@
 
 <body>
 
-  <header class="site-header">
+<header class="site-header">
+  <div class="header-inner">
 
+    <a class="brand" href="#">
+      <span class="brand-dot"></span>
+      <span class="brand-text">From idea to implementation</span>
+    </a>
 
     <div class="header-right">
-      <!-- LANG SWITCH -->
       <div class="lang-switch" id="langSwitch">
-<button class="lang-current" id="langCurrent" type="button">
-  <span class="lang-label" id="currentLang">UA</span>
-  <svg class="lang-caret" width="18" height="18" viewBox="0 0 24 24">
-    <path d="M7 10l5 5 5-5"
-          stroke="currentColor"
-          stroke-width="2.2"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-  </svg>
-</button>
+        <button class="lang-current" id="langCurrent" type="button">
+          <span class="lang-label" id="currentLang">UA</span>
+          <svg class="lang-caret" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+        </button>
 
+        <div class="lang-menu" role="listbox">
+          <button class="lang-item" type="button" data-lang="ua">
+            <span class="lang-flag">🇺🇦</span>
+            <span class="lang-text">Українська</span>
+          </button>
 
-<div class="lang-menu" role="listbox">
-  <button class="lang-item" type="button" data-lang="ua">
-    <span class="lang-flag">🇺🇦</span>
-    <span class="lang-text">Українська</span>
-  </button>
-
-  <button class="lang-item" type="button" data-lang="uk">
-    <span class="lang-flag">🇬🇧</span>
-    <span class="lang-text">English</span>
-  </button>
-</div>
-
+          <button class="lang-item" type="button" data-lang="uk">
+            <span class="lang-flag">🇬🇧</span>
+            <span class="lang-text">English</span>
+          </button>
+        </div>
       </div>
-      <!-- /LANG SWITCH -->
     </div>
+
   </div>
 </header>
+
 
 
 <section class="hero">
