@@ -15,19 +15,29 @@
   font-family:'Inter',sans-serif;
 }
 
+html, body{
+  height:100%;
+}
+
+/* ✅ ВАЖНО: делаем body flex-контейнером */
 body{
   background:#0b1626;
   color:white;
   overflow-x:hidden;
+
+  display:flex;            /* ✅ добавлено */
+  flex-direction:column;   /* ✅ добавлено */
+  min-height:100vh;        /* ✅ добавлено */
 }
 
 /* ================= HERO ================= */
 
+/* ✅ ВАЖНО: убираем min-height:100vh и даём секции занять остаток */
 .hero{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  min-height:100vh;
+  flex:1;                  /* ✅ добавлено */
   padding:0 8%;
   position:relative;
   overflow:hidden;
@@ -104,8 +114,6 @@ body{
   box-shadow:0 20px 60px rgba(0,140,255,0.7);
 }
 
-/* Secondary button */
-
 .cta.secondary{
   background:transparent;
   color:#22d3ee;
@@ -129,7 +137,6 @@ body{
   justify-content:center;
 }
 
-/* Фоновый текст */
 .bg-text{
   position:absolute;
   right:0;
@@ -143,7 +150,6 @@ body{
   pointer-events:none;
 }
 
-/* Акцентный glow */
 .accent-glow{
   position:absolute;
   right:-150px;
@@ -220,6 +226,11 @@ body{
 }
 
 .modal-backdrop.open{ display:flex; }
+
+/* ✅ когда модалка открыта — запрещаем скролл страницы */
+body.modal-open{
+  overflow:hidden;
+}
 
 .modal{
   width:min(560px, 94vw);
@@ -360,6 +371,16 @@ textarea.field{
 .status.ok{ color:#7CFFB2; display:block; }
 .status.err{ color:#FF8A8A; display:block; }
 
+/* ================= FOOTER ================= */
+
+.site-footer{
+  text-align:center;
+  padding:20px 0;
+  font-size:14px;
+  opacity:0.6;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,0.4));
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:1200px){
@@ -419,7 +440,6 @@ textarea.field{
   </div>
 
   <div class="hero-right">
-
     <div class="bg-text">
       IOT<br>
       R&D
@@ -430,7 +450,6 @@ textarea.field{
     <div class="floating-card">
       <img src="assets/img/hero-image.jpg" alt="Engineering">
     </div>
-
   </div>
 
 </section>
@@ -477,6 +496,7 @@ const cancelBtn = document.getElementById('cancelBtn');
 function openModal(){
   modal.classList.add('open');
   modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open'); /* ✅ добавлено */
   const first = modal.querySelector('input, textarea, button');
   if(first) first.focus();
 }
@@ -484,6 +504,7 @@ function openModal(){
 function closeModal(){
   modal.classList.remove('open');
   modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open'); /* ✅ добавлено */
   openBtn.focus();
 }
 
@@ -530,7 +551,7 @@ form.addEventListener('submit', async (e)=>{
   }
 });
 </script>
-  
+
 <footer class="site-footer">
   <div class="footer-content">
     © 2026 PRV-studio. All rights reserved.
