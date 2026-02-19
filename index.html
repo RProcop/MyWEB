@@ -151,11 +151,13 @@ body{
 <script>
 
 /* ================= LANGUAGE SWITCH ================= */
-
 const langSwitch = document.getElementById("langSwitch");
 const langCurrent = document.getElementById("langCurrent");
 const currentLangLabel = document.getElementById("currentLang");
 const langItems = document.querySelectorAll(".lang-item");
+
+const heroTitle = document.querySelector(".hero-left h1");
+const heroSubtitle = document.querySelector(".subtitle");
 
 langCurrent.addEventListener("click", function(e){
   e.stopPropagation();
@@ -175,21 +177,23 @@ langItems.forEach(function(item){
     const lang = item.dataset.lang;
 
     if (lang === "ua") {
-      document.querySelector(".hero-left h1").innerHTML =
+
+      heroTitle.innerHTML =
         "ВБУДОВАНІ<br>РІШЕННЯ<br>НДДКР<br>3D Друк<br>Моделювання";
 
-      document.querySelector(".subtitle").innerHTML =
+      heroSubtitle.innerHTML =
         "Інженерні IoT системи.<br>Надійні апаратні & програмні рішення.<br>3D Друк та моделювання.";
 
       currentLangLabel.textContent = "UA";
-      document.documentElement.lang = "ua";
+      document.documentElement.lang = "uk";
     }
 
     if (lang === "en") {
-      document.querySelector(".hero-left h1").innerHTML =
+
+      heroTitle.innerHTML =
         "EMBEDDED<br>IOT<br>R&D<br>3D Printing<br>Modeling";
 
-      document.querySelector(".subtitle").innerHTML =
+      heroSubtitle.innerHTML =
         "Engineering-driven IoT systems.<br>Reliable hardware & firmware solutions.<br>3D Printing & Modeling.";
 
       currentLangLabel.textContent = "EN";
@@ -200,6 +204,7 @@ langItems.forEach(function(item){
   });
 
 });
+
 
 
 </script>
