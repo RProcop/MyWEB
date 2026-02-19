@@ -364,6 +364,7 @@ textarea.field{
   backdrop-filter: blur(10px);
   background: rgba(11, 22, 38, 0.55);
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: relative; /* важно */
 }
 
 .header-inner{
@@ -372,7 +373,6 @@ textarea.field{
   padding: 14px 0 14px 6%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .brand{
@@ -397,6 +397,14 @@ textarea.field{
   opacity: 0.95;
   font-size: 14px;
 }
+
+/* язык в углу */
+.lang-switch{
+  position: absolute;
+  top: 14px;
+  right: 6px; /* меняй 6px если нужно ближе/дальше */
+}
+
 
 
 /* ================= LANGUAGE SWITCH (dropdown) ================= */
