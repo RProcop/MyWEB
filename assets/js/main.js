@@ -7,7 +7,7 @@ function closeContact() {
   document.getElementById("contactModal").style.display = "none";
 }
 
-/* ================= LANGUAGE SWITCH (PRO) ================= */
+/* ================= LANGUAGE SWITCH ================= */
 
 const langSwitch = document.getElementById("langSwitch");
 const langCurrent = document.getElementById("langCurrent");
