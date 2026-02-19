@@ -398,6 +398,12 @@ textarea.field{
   font-size: 14px;
 }
 
+.header-right{
+  margin-left: auto;
+  margin-right: -6%;
+}
+
+
 /* ================= LANGUAGE SWITCH (dropdown) ================= */
 .lang-switch{
   position: relative;
