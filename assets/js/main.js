@@ -70,3 +70,55 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const langSwitch = document.getElementById("langSwitch");
+  const langCurrent = document.getElementById("langCurrent");
+  const currentLangLabel = document.getElementById("currentLang");
+  const langItems = document.querySelectorAll(".lang-item");
+
+  if (!langSwitch || !langCurrent || !currentLangLabel) return;
+
+  // Open/close
+  langCurrent.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = langSwitch.classList.toggle("open");
+    langCurrent.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".lang-switch")) {
+      langSwitch.classList.remove("open");
+      langCurrent.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  // Select language
+  langItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const lang = item.dataset.lang; // "ua" | "uk"
+      currentLangLabel.textContent = lang.toUpperCase();
+
+      // aria-selected toggle
+      langItems.forEach((i) => i.setAttribute("aria-selected", "false"));
+      item.setAttribute("aria-selected", "true");
+
+      // Close menu
+      langSwitch.classList.remove("open");
+      langCurrent.setAttribute("aria-expanded", "false");
+
+      // TODO: тут подключишь реальную смену языка:
+      // localStorage.setItem("site_lang", lang);
+      // applyLanguage(lang);
+    });
+  });
+
+  // Optional: restore saved language
+  const saved = localStorage.getItem("site_lang");
+  if (saved === "ua" || saved === "uk") {
+    currentLangLabel.textContent = saved.toUpperCase();
+    langItems.forEach((i) => i.setAttribute("aria-selected", String(i.dataset.lang === saved)));
+  }
+});
+
