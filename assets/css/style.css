@@ -361,7 +361,7 @@ textarea.field{
   position: sticky;
   top: 0;
   z-index: 1500;
-  width: 100%;                 /* ← важно */
+  width: 100%;
   backdrop-filter: blur(10px);
   background: rgba(11, 22, 38, 0.55);
   border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -373,7 +373,12 @@ textarea.field{
   padding: 14px 6%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* язык уходит вправо */
+}
+
+/* если язык всё равно не доходит до края — включи это */
+.header-right{
+  margin-left: auto;
 }
 
 .brand{
@@ -398,6 +403,7 @@ textarea.field{
   opacity: 0.95;
   font-size: 14px;
 }
+
 
 
 
