@@ -1,5 +1,4 @@
-/* ================= RESET ================= */
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,104 +12,85 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= HERO SECTION ================= */
+/* HERO SECTION */
 
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 80px;
+  gap: 60px;
   padding: 0 8vw;
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 80% 30%, rgba(0,150,255,0.12), transparent 60%),
-    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.12), transparent 60%),
-    linear-gradient(135deg,#0b1626,#111f36);
 }
 
-/* ================= LEFT SIDE ================= */
+/* LEFT SIDE */
 
 .hero-left {
   flex: 1;
-  max-width: 650px;
-  z-index: 2;
+  max-width: 620px;
 }
 
 .hero-left h1 {
-  font-size: clamp(65px, 6.5vw, 115px);
-  line-height: 0.92;
-  font-weight: 900;
+  font-size: clamp(60px, 7vw, 120px);
+  line-height: 0.9;
+  font-weight: 800;
   letter-spacing: -2px;
 }
 
 .subtitle {
-  margin-top: 28px;
+  margin-top: 30px;
   font-size: 20px;
   opacity: 0.8;
   line-height: 1.6;
 }
 
-/* ================= BUTTON ================= */
-
 .cta {
   display: inline-block;
   margin-top: 40px;
-  padding: 16px 38px;
-  background: linear-gradient(90deg,#00c6ff,#0072ff);
-  color: white;
-  font-weight: 600;
+  padding: 16px 36px;
+  background: #22d3ee;
+  color: #0f172a;
+  font-weight: bold;
   border-radius: 50px;
   text-decoration: none;
-  transition: 0.35s ease;
-  box-shadow: 0 12px 40px rgba(0,140,255,0.4);
+  transition: 0.3s ease;
 }
 
 .cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 60px rgba(0,140,255,0.6);
+  transform: scale(1.05);
 }
 
-/* ================= RIGHT SIDE ================= */
+/* RIGHT SIDE */
 
 .hero-right {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  position: relative;
 }
 
-/* ================= CARD ================= */
-
 .card {
-  width: min(1100px, 60vw);
+  width: min(1200px, 65vw);   /* намного больше */
   aspect-ratio: 16 / 10;
-  border-radius: 36px;
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow:
-    0 80px 200px rgba(0,0,0,0.75),
-    0 0 0 1px rgba(255,255,255,0.04);
-  transition: 0.5s ease;
-  position: relative;
+  box-shadow: 0 60px 160px rgba(0,0,0,0.8);
+  transition: 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-10px);
 }
 
-/* IMAGE BACKGROUND */
+/* IMAGE AS BACKGROUND (надёжнее чем <img>) */
 
 .hero-card {
   background-image: url("../img/hero-image.jpg");
   background-size: cover;
   background-position: center;
-  width: 100%;
-  height: 100%;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE — только реально узкие экраны */
 
 @media (max-width: 900px) {
 
@@ -118,8 +98,8 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 100px 6vw 50px;
-    gap: 50px;
+    padding: 90px 6vw 40px;
+    gap: 40px;
   }
 
   .hero-right {
@@ -129,10 +109,6 @@ body {
   .card {
     width: 92vw;
     max-width: 520px;
-  }
-
-  .hero-left h1 {
-    font-size: clamp(48px, 10vw, 70px);
   }
 
 }
