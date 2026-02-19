@@ -11,34 +11,12 @@ html, body {
 }
 
 body {
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  background:
-    radial-gradient(circle at 70% 30%, #1e293b 0%, #0f172a 60%),
-    linear-gradient(180deg, #0b1626 0%, #0f172a 100%);
-  color: #d1d5db;
-
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 70% 30%, #1e293b 0%, #0f172a 60%);
+  color: #d1d5db; /* мягкий Apple-серый */
+  overflow: hidden; /* полностью убираем прокрутку */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
-  overflow-x: hidden;
-
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-
-  position: relative;
-}
-
-/* subtle noise overlay (премиум-эффект) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 3px 3px;
-  opacity: 0.25;
-  z-index: 0;
 }
 
 /* ================= HERO ================= */
@@ -50,37 +28,6 @@ body::before {
   justify-content: space-between;
   gap: 60px;
   padding: 0 8vw;
-
-  position: relative;
-  z-index: 1;
-}
-
-/* мягкое виньетирование */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at center,
-    transparent 55%,
-    rgba(0, 0, 0, 0.35) 100%
-  );
-  opacity: 0.6;
-}
-
-/* лёгкий glow-акцент */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -150px;
-  right: -120px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.15), transparent 70%);
-  filter: blur(100px);
-  opacity: 0.7;
-  pointer-events: none;
 }
 
 /* ================= FOOTER ================= */
@@ -88,37 +35,8 @@ body::before {
 .site-footer {
   text-align: center;
   font-size: 12px;
-  color: rgba(255,255,255,0.42);
-  padding: 24px 0;
-  letter-spacing: 0.8px;
-  opacity: 0.8;
-
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(255,255,255,0.06);
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.25) 60%,
-    transparent
-  );
-
-  transition: 0.4s ease;
-}
-
-/* лёгкий subtle-hover */
-.site-footer:hover {
-  color: rgba(255,255,255,0.6);
-}
-
-/* если появятся ссылки */
-.site-footer a {
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.site-footer a:hover {
-  color: #22d3ee;
-  text-shadow: 0 0 8px rgba(34,211,238,0.5);
+  color: rgba(255,255,255,0.32);
+  padding: 18px 0;
+  letter-spacing: 0.4px;
+  opacity: 0.7;
 }
