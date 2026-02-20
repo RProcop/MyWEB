@@ -356,34 +356,6 @@ textarea.field{
   color:#0f172a;
 }
 
-/* ================= HEADER ================= */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1500;
-  width: 100%;
-  backdrop-filter: blur(10px);
-  background: rgba(11, 22, 38, 0.55);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.header-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 0 14px 6%; /* ← справа 0 */
-  display: flex;
-  align-items: center;
-}
-
-.header-right{
-  margin-left: auto; /* ← выталкивает язык вправо */
-}
-
-
-
-
-
-
 
 /* ================= LANGUAGE SWITCH ================= */
 
