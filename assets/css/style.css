@@ -385,12 +385,75 @@ textarea.field{
 
 
 
-/* ================= FIXED LANGUAGE SWITCH ================= */
+/* ================= LANGUAGE SWITCH ================= */
 
-.lang-switch.fixed {
-  position: fixed;
-  top: 28px;
-  right: 36px;
-  z-index: 3000;
+.lang-switch{
+  position:relative;
+  font-size:14px;
 }
 
+.lang-current{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.06);
+  color:white;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  transition:0.2s ease;
+}
+
+.lang-current:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.lang-caret{
+  transition:0.2s ease;
+}
+
+.lang-switch.open .lang-caret{
+  transform:rotate(180deg);
+}
+
+.lang-menu{
+  position:absolute;
+  top:120%;
+  right:0;
+  background:rgba(15,31,53,0.95);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border-radius:14px;
+  overflow:hidden;
+  display:none;
+  min-width:160px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lang-switch.open .lang-menu{
+  display:block;
+}
+
+.lang-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 16px;
+  background:none;
+  border:none;
+  color:white;
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.lang-item:hover{
+  background:rgba(255,255,255,0.08);
+}
+
+.lang-flag{
+  font-size:16px;
+}
