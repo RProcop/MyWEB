@@ -439,3 +439,138 @@ textarea.field{
   right:36px;
   z-index:3000;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= ABOUT PAGE ================= */
+
+.about-section{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 8% 80px 8%;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(0,150,255,0.15), transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(255,120,0,0.15), transparent 60%),
+    linear-gradient(135deg,#0b1626,#111f36);
+}
+
+.about-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:80px;
+  width:100%;
+  max-width:1400px;
+}
+
+.about-left{
+  width:45%;
+}
+
+.about-left h1{
+  font-size:70px;
+  font-weight:900;
+  margin-bottom:30px;
+}
+
+.about-text{
+  font-size:18px;
+  opacity:0.8;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+.about-skills{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-weight:600;
+  color:#22d3ee;
+}
+
+.about-right{
+  width:50%;
+}
+
+/* ================= CAROUSEL ================= */
+
+.carousel{
+  position:relative;
+  width:100%;
+  height:500px;
+  border-radius:42px;
+  overflow:hidden;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(25px);
+  box-shadow:
+    0 70px 180px rgba(0,0,0,0.75),
+    0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.carousel-track{
+  width:100%;
+  height:100%;
+  position:relative;
+}
+
+.carousel-item{
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0;
+  transition:opacity 0.6s ease;
+}
+
+.carousel-item.active{
+  opacity:1;
+}
+
+.carousel-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:42px;
+  transition:transform 10s ease;
+}
+
+.carousel-item.active img{
+  transform:scale(1.1);
+}
+
+/* Buttons */
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);
+  border:none;
+  color:white;
+  font-size:28px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:2;
+  transition:0.3s ease;
+}
+
+.carousel-btn:hover{
+  background:#22d3ee;
+  color:#0f172a;
+}
+
+.carousel-btn.prev{ left:20px; }
+.carousel-btn.next{ right:20px; }
