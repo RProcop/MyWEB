@@ -457,3 +457,13 @@ textarea.field{
 .lang-flag{
   font-size:16px;
 }
+
+
+/* ================= FIXED LANGUAGE SWITCH ================= */
+
+.lang-switch.fixed{
+  position:fixed;
+  top:28px;
+  right:36px;
+  z-index:3000;
+}
