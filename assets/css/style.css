@@ -18,6 +18,41 @@ body{
   min-height:100vh;
 }
 
+
+/* ================= HERO LOGO ================= */
+
+.hero-logo {
+  margin-bottom: 28px;
+  animation: fadeInLogo 1.2s ease forwards;
+  opacity: 0;
+}
+
+.hero-logo img {
+  max-width: 320px;
+  height: auto;
+  display: block;
+}
+
+/* Плавное появление */
+@keyframes fadeInLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .hero-logo img {
+    max-width: 240px;
+  }
+}
+
+
 /* ================= HERO ================= */
 
 .hero{
