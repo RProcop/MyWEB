@@ -1111,10 +1111,3 @@ textarea.field {
     padding: 22px 20px !important;
   }
 }
-
-/* Compact main hero title */
-.home-page .hero-left h1 {
-  font-size: clamp(32px, 4.1vw, 64px) !important;
-  line-height: 0.84 !important;
-  letter-spacing: -0.06em !important;
-}
