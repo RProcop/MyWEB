@@ -1,37 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects</title>
-<link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects — PRV Systems</title>
+  <meta name="description" content="Selected embedded IoT, LoRa, firmware, PCB design and prototyping projects by PRV Systems.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
 </head>
+
 <body>
+  <div class="lang-switch fixed" id="langSwitch">
+    <button class="lang-current" id="langCurrent" type="button" aria-haspopup="listbox" aria-expanded="false">
+      <span class="lang-label" id="currentLang">EN</span>
+      <svg class="lang-caret" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
-<nav class="nav">
-  <div class="logo">R&D Engineer</div>
-  <div class="menu">
-    <a href="../">Home</a>
-    <a href="../about/">About</a>
-    <a href="../projects/">Projects</a>
-  </div>
-</nav>
-
-<section class="content">
-  <h1>Selected Work</h1>
-
-  <div class="card">
-    <h3>IoT Energy System</h3>
-    <p>Firmware architecture, wireless sensors, cloud integration.</p>
-  </div>
-
-  <div class="card">
-    <h3>LoRa Embedded Module</h3>
-    <p>Custom PCB, driver optimization, RF testing.</p>
+    <div class="lang-menu" role="listbox">
+      <button class="lang-item" type="button" data-lang="en" aria-selected="true">
+        <span class="lang-text">English</span>
+      </button>
+      <button class="lang-item" type="button" data-lang="uk" aria-selected="false">
+        <span class="lang-text">Українська</span>
+      </button>
+    </div>
   </div>
 
-</section>
+  <header class="nav">
+    <a class="logo" href="../">PRV Systems</a>
 
+    <nav class="menu" aria-label="Main navigation">
+      <a href="../" data-i18n="nav.home">Home</a>
+      <a href="../about/" data-i18n="nav.about">About</a>
+      <a href="../projects/" data-i18n="nav.projects">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content">
+      <p class="eyebrow" data-i18n="projects.eyebrow">
+        Selected engineering work
+      </p>
+
+      <h1 data-i18n="projects.title">Selected Work</h1>
+
+      <div class="project-grid">
+        <article class="card">
+          <div class="card-badge">IoT</div>
+          <h3 data-i18n="projects.cardOneTitle">IoT Energy System</h3>
+          <p data-i18n="projects.cardOneText">
+            Firmware architecture, wireless sensors, telemetry, cloud integration and device monitoring.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-badge">LoRa</div>
+          <h3 data-i18n="projects.cardTwoTitle">LoRa Embedded Module</h3>
+          <p data-i18n="projects.cardTwoText">
+            Custom PCB, driver optimization, low-power firmware and RF testing for long-range communication.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-badge">PCB</div>
+          <h3 data-i18n="projects.cardThreeTitle">Custom Control Board</h3>
+          <p data-i18n="projects.cardThreeText">
+            Hardware architecture, schematic design, prototyping and firmware for industrial control tasks.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-badge">3D</div>
+          <h3 data-i18n="projects.cardFourTitle">3D Printed Prototypes</h3>
+          <p data-i18n="projects.cardFourText">
+            Rapid enclosure modeling, mechanical fit testing and prototype iteration for electronic devices.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      © 2026 PRV Systems. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
-
