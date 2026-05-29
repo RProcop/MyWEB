@@ -921,3 +921,148 @@ textarea.field {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ================= ONE SCREEN LANDING FIX ================= */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100svh;
+}
+
+main {
+  height: calc(100svh - 64px);
+  overflow: hidden;
+}
+
+.hero {
+  min-height: auto !important;
+  height: 100%;
+  padding: clamp(28px, 4vh, 56px) 6vw clamp(20px, 3vh, 36px) !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-shell {
+  height: 100%;
+  align-items: center;
+}
+
+.hero-logo {
+  margin-bottom: clamp(18px, 3vh, 28px) !important;
+}
+
+.hero-logo img {
+  width: clamp(170px, 14vw, 250px) !important;
+}
+
+.hero-left h1 {
+  font-size: clamp(52px, 7.2vw, 118px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.07em;
+}
+
+.subtitle {
+  margin-top: clamp(16px, 2.5vh, 28px) !important;
+  font-size: clamp(15px, 1.15vw, 19px) !important;
+  line-height: 1.55 !important;
+}
+
+.cta-group {
+  margin-top: clamp(22px, 3vh, 36px) !important;
+}
+
+.hero-right {
+  min-height: auto !important;
+  height: 100%;
+}
+
+.floating-card {
+  height: min(64vh, 620px) !important;
+  width: min(100%, 760px) !important;
+}
+
+.bg-text {
+  font-size: clamp(90px, 13vw, 210px) !important;
+}
+
+.site-footer {
+  height: 64px;
+  padding: 0 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Для ноутбуков с невысоким экраном */
+@media (max-height: 820px) {
+  main {
+    height: calc(100svh - 56px);
+  }
+
+  .hero {
+    padding-top: 28px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .hero-logo {
+    margin-bottom: 18px !important;
+  }
+
+  .hero-logo img {
+    width: clamp(150px, 12vw, 220px) !important;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(48px, 6.2vw, 96px) !important;
+  }
+
+  .subtitle {
+    margin-top: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .cta-group {
+    margin-top: 22px !important;
+  }
+
+  .floating-card {
+    height: min(62vh, 540px) !important;
+  }
+
+  .site-footer {
+    height: 56px;
+  }
+}
+
+/* На мобильных лучше оставить прокрутку, иначе контент будет обрезаться */
+@media (max-width: 760px) {
+  html,
+  body {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  main {
+    height: auto;
+    overflow: visible;
+  }
+
+  .hero {
+    min-height: 100svh !important;
+    height: auto;
+    overflow: visible;
+  }
+
+  .site-footer {
+    height: auto;
+    padding: 22px 20px !important;
+  }
+}
