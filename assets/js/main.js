@@ -11,9 +11,7 @@ function initContactModal() {
   const form = document.getElementById("contactForm");
   const statusEl = document.getElementById("status");
 
-  if (!openBtn || !modal || !closeBtn || !cancelBtn || !form || !statusEl) {
-    return;
-  }
+  if (!openBtn || !modal || !closeBtn || !cancelBtn || !form || !statusEl) return;
 
   function openModal() {
     modal.classList.add("open");
@@ -36,9 +34,7 @@ function initContactModal() {
   cancelBtn.addEventListener("click", closeModal);
 
   modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
+    if (event.target === modal) closeModal();
   });
 
   document.addEventListener("keydown", (event) => {
@@ -58,14 +54,10 @@ function initContactModal() {
       const response = await fetch(form.action, {
         method: "POST",
         body: new FormData(form),
-        headers: {
-          Accept: "application/json"
-        }
+        headers: { Accept: "application/json" }
       });
 
-      if (!response.ok) {
-        throw new Error("Form submit failed");
-      }
+      if (!response.ok) throw new Error("Form submit failed");
 
       statusEl.className = "status ok";
       statusEl.textContent = "Sent! I will reply soon.";
@@ -74,60 +66,78 @@ function initContactModal() {
       window.setTimeout(closeModal, 900);
     } catch {
       statusEl.className = "status err";
-      statusEl.textContent = "Network error. Please try again later.";
+      statusEl.textContent = "Network error. Please try again.";
     }
   });
 }
 
 function initLanguageSwitch() {
-  const langSwitch = document.getElementById("langSwitch");
-  const langCurrent = document.getElementById("langCurrent");
-  const currentLangLabel = document.getElementById("currentLang");
-  const langItems = document.querySelectorAll(".lang-item");
+  const switcher = document.getElementById("langSwitch");
+  const currentBtn = document.getElementById("langCurrent");
+  const currentLabel = document.getElementById("currentLangLabel");
+  const items = document.querySelectorAll(".lang-item");
 
-  if (!langSwitch || !langCurrent || !currentLangLabel || !langItems.length) {
-    return;
+  if (!switcher || !currentBtn || !currentLabel || !items.length) return;
+
+  const dictionary = {
+    uk: {
+      label: "UA",
+      heroTitle1: "EMBEDDED",
+      heroTitle2: "SOLUTIONS",
+      heroSubtitle: "Engineering-driven IoT systems. Reliable hardware & firmware development. 3D-Printing & Modeling.",
+      aboutBtn: "About",
+      contactBtn: "Contact me",
+      modalTitle: "Contact me",
+      modalHint: "Send a message — it will be delivered to me.",
+      cancelBtn: "Cancel",
+      sendBtn: "Send"
+    },
+    en: {
+      label: "EN",
+      heroTitle1: "EMBEDDED",
+      heroTitle2: "SOLUTIONS",
+      heroSubtitle: "Engineering-driven IoT systems. Reliable hardware & firmware development. 3D-Printing & Modeling.",
+      aboutBtn: "About",
+      contactBtn: "Contact me",
+      modalTitle: "Contact me",
+      modalHint: "Send a message — it will be delivered to me.",
+      cancelBtn: "Cancel",
+      sendBtn: "Send"
+    }
+  };
+
+  function setLanguage(lang) {
+    const data = dictionary[lang] || dictionary.uk;
+
+    currentLabel.textContent = data.label;
+
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+      const key = element.dataset.i18n;
+      if (data[key]) element.textContent = data[key];
+    });
+
+    localStorage.setItem("siteLang", lang);
+    switcher.classList.remove("open");
+    currentBtn.setAttribute("aria-expanded", "false");
   }
 
-  langCurrent.addEventListener("click", (event) => {
-    event.stopPropagation();
+  currentBtn.addEventListener("click", () => {
+    const isOpen = switcher.classList.toggle("open");
+    currentBtn.setAttribute("aria-expanded", String(isOpen));
+  });
 
-    const isOpen = langSwitch.classList.toggle("open");
-    langCurrent.setAttribute("aria-expanded", String(isOpen));
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      setLanguage(item.dataset.lang);
+    });
   });
 
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".lang-switch")) {
-      langSwitch.classList.remove("open");
-      langCurrent.setAttribute("aria-expanded", "false");
+    if (!switcher.contains(event.target)) {
+      switcher.classList.remove("open");
+      currentBtn.setAttribute("aria-expanded", "false");
     }
   });
 
-  langItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      const lang = item.dataset.lang;
-
-      if (!lang) return;
-
-      localStorage.setItem("site_lang", lang);
-      currentLangLabel.textContent = lang.toUpperCase();
-
-      langItems.forEach((button) => {
-        button.setAttribute("aria-selected", String(button.dataset.lang === lang));
-      });
-
-      langSwitch.classList.remove("open");
-      langCurrent.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  const savedLang = localStorage.getItem("site_lang");
-
-  if (savedLang) {
-    currentLangLabel.textContent = savedLang.toUpperCase();
-
-    langItems.forEach((button) => {
-      button.setAttribute("aria-selected", String(button.dataset.lang === savedLang));
-    });
-  }
+  setLanguage(localStorage.getItem("siteLang") || "uk");
 }
