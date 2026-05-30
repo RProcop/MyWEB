@@ -1118,82 +1118,59 @@ textarea.field {
   line-height: 0.84 !important;
   letter-spacing: -0.06em !important;
 }
-
-/* ================= FINAL HOME PAGE FIX ================= */
+/* ================= QUICK FINAL FIX: TITLE + BUTTONS ================= */
 
 @media (min-width: 761px) {
-  html,
   body.home-page {
-    width: 100%;
-    height: 100dvh;
-    min-height: 100dvh;
-    max-height: 100dvh;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
     overflow: hidden !important;
-  }
-
-  body.home-page {
     display: grid !important;
     grid-template-rows: minmax(0, 1fr) 44px !important;
   }
 
   .home-page main {
-    height: 100%;
     min-height: 0 !important;
+    height: 100% !important;
     overflow: hidden !important;
   }
 
   .home-page .hero {
-    width: 100%;
     height: 100% !important;
     min-height: 0 !important;
-    padding: 10px 5.6vw 12px !important;
-    display: grid !important;
-    grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
-    gap: clamp(22px, 3.6vw, 60px) !important;
-    align-items: center !important;
+    padding-top: 10px !important;
+    padding-bottom: 28px !important;
     overflow: hidden !important;
   }
 
-  .home-page .hero-left,
-  .home-page .hero-right {
-    width: 100% !important;
-    min-height: 0 !important;
-  }
-
-  /* Поднимаем левый блок выше */
   .home-page .hero-left {
-    transform: translateY(-30px) !important;
+    transform: translateY(-65px) !important;
   }
 
   .home-page .hero-logo {
-    margin-bottom: 8px !important;
+    margin-bottom: 10px !important;
   }
 
   .home-page .hero-logo img {
-    width: clamp(108px, 7.5vw, 160px) !important;
-    height: auto !important;
+    width: 155px !important;
   }
 
-  /* Уменьшаем основной заголовок */
   .home-page .hero-left h1 {
-    max-width: 620px !important;
-    font-size: clamp(28px, 3.8vw, 58px) !important;
-    line-height: 0.80 !important;
-    letter-spacing: -0.07em !important;
+    font-size: 48px !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.065em !important;
   }
 
   .home-page .subtitle {
-    margin-top: 10px !important;
-    max-width: 520px !important;
-    font-size: clamp(12px, 0.92vw, 15px) !important;
-    line-height: 1.30 !important;
+    margin-top: 14px !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
   }
 
-  /* Оставляем зазор над кнопками и футером */
   .home-page .cta-group {
-    margin-top: 14px !important;
-    gap: 10px !important;
-    padding-bottom: 10px !important;
+    margin-top: 16px !important;
+    padding-bottom: 26px !important;
+    gap: 12px !important;
   }
 
   .home-page .cta {
@@ -1202,66 +1179,41 @@ textarea.field {
     font-size: 12px !important;
   }
 
-  .home-page .hero-right {
-    height: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
   .home-page .floating-card {
-    width: min(100%, 700px) !important;
-    height: min(46vh, 395px) !important;
-  }
-
-  .home-page .bg-text {
-    font-size: clamp(68px, 9vw, 148px) !important;
+    height: 405px !important;
+    max-height: 48vh !important;
   }
 
   .home-page .site-footer {
     height: 44px !important;
     min-height: 44px !important;
-    margin-top: 0 !important;
     padding: 0 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .home-page .footer-content {
-    font-size: 11px !important;
   }
 }
 
-/* Для невысоких экранов */
 @media (min-width: 761px) and (max-height: 820px) {
   body.home-page {
     grid-template-rows: minmax(0, 1fr) 40px !important;
   }
 
-  .home-page .hero {
-    padding-top: 8px !important;
-    padding-bottom: 10px !important;
-  }
-
   .home-page .hero-left {
-    transform: translateY(-36px) !important;
+    transform: translateY(-82px) !important;
   }
 
   .home-page .hero-left h1 {
-    font-size: clamp(26px, 3.45vw, 52px) !important;
-    line-height: 0.79 !important;
+    font-size: 42px !important;
+    line-height: 0.8 !important;
   }
 
   .home-page .subtitle {
-    margin-top: 8px !important;
-    font-size: 12px !important;
-    line-height: 1.25 !important;
+    margin-top: 10px !important;
+    font-size: 13px !important;
+    line-height: 1.28 !important;
   }
 
   .home-page .cta-group {
     margin-top: 12px !important;
-    padding-bottom: 10px !important;
+    padding-bottom: 34px !important;
   }
 
   .home-page .cta {
@@ -1271,86 +1223,12 @@ textarea.field {
   }
 
   .home-page .floating-card {
-    height: min(43vh, 360px) !important;
+    height: 360px !important;
+    max-height: 44vh !important;
   }
 
   .home-page .site-footer {
     height: 40px !important;
     min-height: 40px !important;
-  }
-}
-
-/* Для очень низких экранов */
-@media (min-width: 761px) and (max-height: 740px) {
-  body.home-page {
-    grid-template-rows: minmax(0, 1fr) 36px !important;
-  }
-
-  .home-page .hero-left {
-    transform: translateY(-42px) !important;
-  }
-
-  .home-page .hero-left h1 {
-    font-size: clamp(24px, 3.2vw, 46px) !important;
-    line-height: 0.78 !important;
-  }
-
-  .home-page .subtitle {
-    font-size: 11px !important;
-    line-height: 1.2 !important;
-  }
-
-  .home-page .cta {
-    min-height: 30px !important;
-    padding: 5px 14px !important;
-    font-size: 11px !important;
-  }
-
-  .home-page .floating-card {
-    height: min(40vh, 330px) !important;
-  }
-
-  .home-page .site-footer {
-    height: 36px !important;
-    min-height: 36px !important;
-  }
-
-  .home-page .footer-content {
-    font-size: 10px !important;
-  }
-}
-
-/* Mobile: обычная прокрутка */
-@media (max-width: 760px) {
-  html,
-  body.home-page {
-    height: auto !important;
-    min-height: 100svh !important;
-    max-height: none !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-  }
-
-  body.home-page {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  .home-page main {
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-  .home-page .hero {
-    height: auto !important;
-    min-height: 100svh !important;
-    display: flex !important;
-    overflow: visible !important;
-  }
-
-  .home-page .site-footer {
-    height: auto !important;
-    min-height: auto !important;
-    padding: 22px 20px !important;
   }
 }
