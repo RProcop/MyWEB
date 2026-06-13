@@ -485,3 +485,26 @@ textarea.field {
     flex-direction: column-reverse;
   }
 }
+
+.focus-motion {
+  animation: focusMove 9s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform, filter;
+}
+
+@keyframes focusMove {
+  0% {
+    transform: scale(1) translate(0, 0);
+    filter: contrast(1) saturate(1);
+  }
+
+  50% {
+    transform: scale(1.07) translate(8px, -8px);
+    filter: contrast(1.12) saturate(1.22);
+  }
+
+  100% {
+    transform: scale(1) translate(0, 0);
+    filter: contrast(1) saturate(1);
+  }
+}
