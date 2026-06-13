@@ -225,7 +225,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(60px);
+  transform: translateX(20px);
 }
 
 .bg-text {
