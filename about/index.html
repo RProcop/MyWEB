@@ -1,98 +1,136 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRV Systems — Embedded IoT & 3D Printing</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про PRV Systems — команда embedded, IoT, PCB, firmware та R&D</title>
+  <meta name="description" content="PRV Systems — інженерна група при ФОП для НДДКР, embedded-розробки, електроніки, прошивок STM32/AVR/ESP32, сенсорів, телеметрії, серверної частини та 3D-прототипування.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prv-systems.com/about/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <script src="../assets/js/main.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<body>
+  <header class="nav">
+    <a class="logo" href="../" aria-label="PRV Systems">
+      <img src="../assets/img/prv_logo.png" alt="PRV Systems logo">
+      <span>PRV Systems</span>
+    </a>
+    <nav class="menu" aria-label="Основна навігація">
+      <a href="../">Головна</a>
+      <a href="./">Про нас</a>
+      <a href="../projects/">Напрями</a>
+      <a href="../rnd/">НДДКР</a>
+    </nav>
+    <button class="nav-contact" type="button" id="openContacts">Обговорити задачу</button>
+  </header>
 
-<body class="home-page">
   <main>
-    <section class="hero">
-      <div class="lang-switch fixed" id="langSwitch">
-        <button class="lang-current" type="button" id="langCurrent" aria-haspopup="true" aria-expanded="false">
-          <span id="currentLangLabel">UA</span>
-          <span class="lang-caret">⌄</span>
-        </button>
-
-        <div class="lang-menu" role="menu">
-          <button class="lang-item" type="button" data-lang="uk">Українська</button>
-          <button class="lang-item" type="button" data-lang="en">English</button>
-        </div>
+    <section class="page-hero compact-hero">
+      <div class="page-hero-text">
+        <p class="eyebrow">Про команду</p>
+        <h1>Інженерна група для розробки електроніки, прошивок та прикладних технічних рішень</h1>
+        <p>Роботи виконуються командою інженерів та розробників під координацією ФОП. Ми спеціалізуємося на швидкій перевірці технічних гіпотез, створенні дослідних зразків, доопрацюванні рішень і підготовці їх до практичного використання.</p>
       </div>
-
-      <div class="hero-shell">
-        <div class="hero-left">
-          <a class="hero-logo" href="../" aria-label="PRV Systems">
-            <img src="../assets/img/prv_logo.png" alt="PRV Systems Logo" width="320" height="120">
-          </a>
-
-          <h1>
-            <span data-i18n="heroTitle1">EMBEDDED</span>
-            <span data-i18n="heroTitle2">SOLUTIONS</span>
-          </h1>
-
-          <p class="subtitle" data-i18n="heroSubtitle">
-            Engineering-driven IoT systems. Development reliable hardware & firmware. 3D-Printing & Modeling.
-          </p>
-
-          <div class="cta-group">
-            <a class="cta secondary" href="../" data-i18n="homeBtn">Home</a>
-            <button class="cta" type="button" id="openContacts" data-i18n="contactBtn">Contact me</button>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="bg-text">
-            IOT<br>
-            R&amp;D
-          </div>
-
-          <div class="floating-card">
-            <img src="../assets/img/workspace-image.png" alt="Engineering" width="760" height="620" fetchpriority="high">
-          </div>
-        </div>
+      <div class="page-hero-media">
+        <img src="../assets/img/workspace-image.png" alt="Лабораторне робоче місце для НДДКР, електроніки, вимірювань та прототипування">
       </div>
+    </section>
+
+    <section class="content-section split-section">
+      <div>
+        <p class="eyebrow">Компетенції</p>
+        <h2>Від плати і прошивки до серверної частини та інтерфейсу</h2>
+        <p>Команда закриває повний цикл прикладної розробки: аналіз задачі, електроніка, firmware, механіка прототипу, бездротова передача даних, серверна логіка, база даних і вебвізуалізація.</p>
+      </div>
+      <div class="check-list two-column-list">
+        <p>Розробка електроніки та друкованих плат.</p>
+        <p>Прошивки для STM32, AVR, ESP32 та суміжних платформ.</p>
+        <p>Робота з датчиками, телеметрією, LoRa, Wi‑Fi, BLE.</p>
+        <p>Серверна частина, бази даних, API та вебінтерфейси.</p>
+        <p>3D-моделювання, корпуси, кріплення та тестові стенди.</p>
+        <p>Прототипування, тестування, доопрацювання і супровід.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head">
+        <p class="eyebrow">Досвід</p>
+        <h2>Практична база, яку можна адаптувати під нові задачі</h2>
+        <p>Частина напрацювань має цивільне походження, але технічна база — embedded, IoT, сенсори, обробка сигналів, телеметрія, вебвізуалізація та прототипування — дозволяє швидко адаптувати рішення під прикладні сценарії.</p>
+      </div>
+      <div class="feature-grid three-cols">
+        <article class="feature-card">
+          <div class="card-badge">IoT</div>
+          <h3>Пристрої та телеметрія</h3>
+          <p>Розробка пристроїв, які вимірюють, передають, зберігають і відображають дані в режимі, зручному для контролю та аналізу.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-badge">Firmware</div>
+          <h3>Прошивки й логіка керування</h3>
+          <p>Алгоритми роботи пристроїв, робота з периферією, стабільність, діагностика, оновлення та адаптація під реальні умови.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-badge">Sensors</div>
+          <h3>Сенсори руху та вібрації</h3>
+          <p>Пристрої на базі сенсорів руху, вібрації, просторового положення, збір даних і побудова логіки виявлення подій.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-badge">Data</div>
+          <h3>Обробка сигналів і даних</h3>
+          <p>Фільтрація, аналіз, пошук корисних ознак, формування подій, графіки та візуальне представлення результатів.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-badge">UAV</div>
+          <h3>Допоміжні модулі для БПЛА</h3>
+          <p>Досвід створення тестових прототипів електронних і механічних модулів для інтеграції додаткового обладнання з коптерами.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-badge">3D</div>
+          <h3>Швидкі ітерації конструкції</h3>
+          <p>3D-друк, корпуси, кріплення, перевірка посадки компонентів, підготовка прототипів до польових або лабораторних тестів.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section note-section">
+      <p class="eyebrow">Принцип</p>
+      <h2>Ми чесно розділяємо дослідний зразок і готовий продукт</h2>
+      <p>Окремі рішення можуть перебувати на стадії тестових прототипів. Тому оптимальний формат співпраці — НДДКР: узгодження задачі, створення першого зразка, перевірка, збір зауважень і лише потім рішення щодо доопрацювання або малосерійного виготовлення.</p>
     </section>
   </main>
 
   <div class="modal-backdrop" id="contactModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-header">
-        <div class="modal-title" id="modalTitle" data-i18n="modalTitle">Contact me</div>
-        <button class="modal-close" type="button" id="closeContacts" aria-label="Close">✕</button>
-      </div>
-
-      <div class="modal-body">
-        <p class="modal-hint" data-i18n="modalHint">Send a message — it will be delivered to me.</p>
-
-        <form id="contactForm" action="https://formspree.io/f/xgegpvow" method="POST">
-          <div class="form-grid">
-            <input class="field" type="text" name="name" placeholder="Name" required>
-            <input class="field" type="email" name="email" placeholder="Email" required>
-            <textarea class="field" name="message" placeholder="Message" required></textarea>
-          </div>
-
-          <div class="modal-actions">
-            <button class="btn btn-ghost" type="button" id="cancelBtn" data-i18n="cancelBtn">Cancel</button>
-            <button class="btn btn-primary" type="submit" data-i18n="sendBtn">Send</button>
-          </div>
-
-          <p class="status" id="status"></p>
-        </form>
-      </div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Зв’язатися з PRV Systems</div>
+      <button class="modal-close" id="closeContacts" type="button" aria-label="Закрити">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-hint">Опишіть задачу, поточну проблему або ідею. Ми відповімо з реалістичним планом першого етапу НДДКР.</p>
+      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
+        <div class="form-grid">
+          <input class="field" name="name" type="text" placeholder="Ваше ім’я / організація" required>
+          <input class="field" name="email" type="email" placeholder="Email для відповіді" required>
+          <textarea class="field" name="message" placeholder="Коротко опишіть задачу, умови роботи, бажаний результат" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Запит із сайту PRV Systems">
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="cancelBtn" type="button">Скасувати</button>
+          <button class="btn btn-primary" type="submit">Надіслати</button>
+        </div>
+        <p class="status" id="status"></p>
+      </form>
     </div>
   </div>
-
+</div>
   <footer class="site-footer">
-    <div class="footer-content">© 2026 PRV-systems. All rights reserved.</div>
-  </footer>
+  <div class="footer-content">
+    <strong>PRV Systems</strong> — НДДКР, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
+  </div>
+</footer>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -1,97 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Projects — PRV Systems</title>
-  <meta name="description" content="Selected embedded IoT, LoRa, firmware, PCB design and prototyping projects by PRV Systems.">
-
+  <title>Напрями робіт — embedded, IoT, сенсорні модулі, БПЛА, телеметрія</title>
+  <meta name="description" content="Напрями PRV Systems: IoT-пристрої, розробка прошивок, PCB, сенсорні модулі, допоміжна електроніка для БПЛА, телеметрія, вебпанелі, тестові стенди та 3D-прототипи.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prv-systems.com/projects/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="../assets/js/main.js" defer></script>
 </head>
-
 <body>
-  <div class="lang-switch fixed" id="langSwitch">
-    <button class="lang-current" id="langCurrent" type="button" aria-haspopup="listbox" aria-expanded="false">
-      <span class="lang-label" id="currentLang">EN</span>
-      <svg class="lang-caret" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <div class="lang-menu" role="listbox">
-      <button class="lang-item" type="button" data-lang="en" aria-selected="true">
-        <span class="lang-text">English</span>
-      </button>
-      <button class="lang-item" type="button" data-lang="uk" aria-selected="false">
-        <span class="lang-text">Українська</span>
-      </button>
-    </div>
-  </div>
-
   <header class="nav">
-    <a class="logo" href="../">PRV Systems</a>
-
-    <nav class="menu" aria-label="Main navigation">
-      <a href="../" data-i18n="nav.home">Home</a>
-      <a href="../about/" data-i18n="nav.about">About</a>
-      <a href="../projects/" data-i18n="nav.projects">Projects</a>
+    <a class="logo" href="../" aria-label="PRV Systems">
+      <img src="../assets/img/prv_logo.png" alt="PRV Systems logo">
+      <span>PRV Systems</span>
+    </a>
+    <nav class="menu" aria-label="Основна навігація">
+      <a href="../">Головна</a>
+      <a href="../about/">Про нас</a>
+      <a href="./">Напрями</a>
+      <a href="../rnd/">НДДКР</a>
     </nav>
+    <button class="nav-contact" type="button" id="openContacts">Обговорити задачу</button>
   </header>
 
   <main>
-    <section class="content">
-      <p class="eyebrow" data-i18n="projects.eyebrow">
-        Selected engineering work
-      </p>
+    <section class="page-hero text-only-hero">
+      <p class="eyebrow">Напрями робіт</p>
+      <h1>Розробка прикладних технічних рішень: від сенсора до вебпанелі</h1>
+      <p>Ми беремо задачі, де потрібна комбінація електроніки, прошивки, механіки, передачі даних і програмної частини. Нижче — основні напрями, які можна використати як базу для НДДКР або окремої розробки.</p>
+    </section>
 
-      <h1 data-i18n="projects.title">Selected Work</h1>
-
-      <div class="project-grid">
-        <article class="card">
-          <div class="card-badge">IoT</div>
-          <h3 data-i18n="projects.cardOneTitle">IoT Energy System</h3>
-          <p data-i18n="projects.cardOneText">
-            Firmware architecture, wireless sensors, telemetry, cloud integration and device monitoring.
-          </p>
+    <section class="content-section">
+      <div class="feature-grid three-cols">
+        <article class="feature-card tall-card">
+          <div class="card-badge">Embedded</div>
+          <h2>Розробка електронних пристроїв</h2>
+          <p>Схемотехніка, PCB, підбір компонентів, живлення, інтерфейси, прототипи та підготовка до малосерійного виготовлення.</p>
+          <ul><li>STM32, AVR, ESP32</li><li>UART, SPI, I2C, 1‑Wire</li><li>Датчики, керування, діагностика</li></ul>
         </article>
-
-        <article class="card">
-          <div class="card-badge">LoRa</div>
-          <h3 data-i18n="projects.cardTwoTitle">LoRa Embedded Module</h3>
-          <p data-i18n="projects.cardTwoText">
-            Custom PCB, driver optimization, low-power firmware and RF testing for long-range communication.
-          </p>
+        <article class="feature-card tall-card">
+          <div class="card-badge">Firmware</div>
+          <h2>Прошивки та адаптація логіки</h2>
+          <p>Розробка firmware, оптимізація алгоритмів, інтеграція периферії, телеметрія, стабілізація роботи пристроїв у реальних умовах.</p>
+          <ul><li>Логіка керування</li><li>Збір і передача даних</li><li>Діагностика та оновлення</li></ul>
         </article>
-
-        <article class="card">
-          <div class="card-badge">PCB</div>
-          <h3 data-i18n="projects.cardThreeTitle">Custom Control Board</h3>
-          <p data-i18n="projects.cardThreeText">
-            Hardware architecture, schematic design, prototyping and firmware for industrial control tasks.
-          </p>
+        <article class="feature-card tall-card">
+          <div class="card-badge">Sensors</div>
+          <h2>Сенсорні модулі</h2>
+          <p>Пристрої для вимірювання руху, вібрації, просторового положення, температури, станів середовища або технічного об’єкта.</p>
+          <ul><li>Вібраційні та інерційні датчики</li><li>Алгоритми виявлення подій</li><li>Фільтрація і аналіз сигналів</li></ul>
         </article>
-
-        <article class="card">
-          <div class="card-badge">3D</div>
-          <h3 data-i18n="projects.cardFourTitle">3D Printed Prototypes</h3>
-          <p data-i18n="projects.cardFourText">
-            Rapid enclosure modeling, mechanical fit testing and prototype iteration for electronic devices.
-          </p>
+        <article class="feature-card tall-card">
+          <div class="card-badge">UAV</div>
+          <h2>Допоміжні модулі для БПЛА</h2>
+          <p>Прототипи електронних і механічних модулів для інтеграції додаткового обладнання з коптерами, тестування сумісності та надійності.</p>
+          <ul><li>Механічна інтеграція</li><li>Керування допоміжним обладнанням</li><li>Адаптація під обмеження платформи</li></ul>
+        </article>
+        <article class="feature-card tall-card">
+          <div class="card-badge">Data</div>
+          <h2>Телеметрія та вебвізуалізація</h2>
+          <p>Системи збору даних, API, бази даних, графіки, журнали подій, панелі контролю, інструменти для аналізу тестів і експлуатації.</p>
+          <ul><li>Web dashboard</li><li>API та бази даних</li><li>Графіки, події, звіти</li></ul>
+        </article>
+        <article class="feature-card tall-card">
+          <div class="card-badge">Prototype</div>
+          <h2>3D-друк і тестові стенди</h2>
+          <p>Швидке виготовлення корпусів, кріплень, макетів і стендів, які дозволяють перевірити конструкцію до витрат на серійне виробництво.</p>
+          <ul><li>Корпуси та кріплення</li><li>Механічна перевірка</li><li>Ітерації після тестів</li></ul>
         </article>
       </div>
     </section>
+
+    <section class="content-section note-section">
+      <p class="eyebrow">Важливо</p>
+      <h2>Працюємо в межах узгодженого технічного завдання</h2>
+      <p>Для чутливих напрямів публічний сайт описує лише загальні компетенції. Конкретні технічні деталі, умови тестування, обмеження та вимоги обговорюються напряму з відповідальними представниками замовника.</p>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-content">
-      © 2026 PRV Systems. All rights reserved.
+  <div class="modal-backdrop" id="contactModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Зв’язатися з PRV Systems</div>
+      <button class="modal-close" id="closeContacts" type="button" aria-label="Закрити">✕</button>
     </div>
-  </footer>
+    <div class="modal-body">
+      <p class="modal-hint">Опишіть задачу, поточну проблему або ідею. Ми відповімо з реалістичним планом першого етапу НДДКР.</p>
+      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
+        <div class="form-grid">
+          <input class="field" name="name" type="text" placeholder="Ваше ім’я / організація" required>
+          <input class="field" name="email" type="email" placeholder="Email для відповіді" required>
+          <textarea class="field" name="message" placeholder="Коротко опишіть задачу, умови роботи, бажаний результат" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Запит із сайту PRV Systems">
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="cancelBtn" type="button">Скасувати</button>
+          <button class="btn btn-primary" type="submit">Надіслати</button>
+        </div>
+        <p class="status" id="status"></p>
+      </form>
+    </div>
+  </div>
+</div>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <strong>PRV Systems</strong> — НДДКР, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
+  </div>
+</footer>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
