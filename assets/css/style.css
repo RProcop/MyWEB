@@ -488,24 +488,22 @@ textarea.field {
 }
 
 .focus-motion {
-  animation: focusMove 20s ease-in-out infinite;
+  animation: focusMove 40 ease-in-out infinite;
   transform-origin: center center;
-  will-change: transform, filter;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 @keyframes focusMove {
   0% {
-    transform: scale(1) translate(0, 0);
-    filter: contrast(1) saturate(1);
+    transform: scale(1.03) translate3d(0, 0, 0);
   }
 
   50% {
-    transform: scale(1.07) translate(8px, -8px);
-    filter: contrast(1.12) saturate(1.22);
+    transform: scale(1.07) translate3d(8px, -8px, 0);
   }
 
   100% {
-    transform: scale(1) translate(0, 0);
-    filter: contrast(1) saturate(1);
+    transform: scale(1.03) translate3d(0, 0, 0);
   }
 }
