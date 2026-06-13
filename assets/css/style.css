@@ -488,7 +488,7 @@ textarea.field {
 }
 
 .focus-motion {
-  animation: focusMove 40 ease-in-out infinite;
+  animation: focusMove 28s ease-in-out infinite;
   transform-origin: center center;
   will-change: transform;
   backface-visibility: hidden;
