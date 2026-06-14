@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>НДДКР для підрозділів — електроніка, прошивки, сенсори, телеметрія</title>
+  <meta name="description" content="Комерційна пропозиція PRV Systems щодо виконання НДДКР: електроніка, embedded firmware, сенсорні модулі, телеметрія, вебвізуалізація, прототипування та тестування технічних рішень.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://prv-systems.com/rnd/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="../" aria-label="PRV Systems">
+      <img src="../assets/img/prv_logo.png" alt="PRV Systems logo">
+      <span>PRV Systems</span>
+    </a>
+    <nav class="menu" aria-label="Основна навігація">
+      <a href="../">Головна</a>
+      <a href="../about/">Про нас</a>
+      <a href="../projects/">Напрями</a>
+      <a href="./">НДДКР</a>
+    </nav>
+    <button class="nav-contact" type="button" id="openContacts">Обговорити задачу</button>
+  </header>
+
+  <main>
+    <section class="page-hero text-only-hero">
+      <p class="eyebrow">Комерційна пропозиція</p>
+      <h1>Виконання НДДКР та розробка технічних рішень для прикладних задач</h1>
+      <p>Ми пропонуємо співпрацю у сфері науково-дослідних та дослідно-конструкторських робіт: електронні пристрої, прошивки, сенсорні модулі, телеметрія, програмне забезпечення, вебвізуалізація, прототипування та тестування.</p>
+    </section>
+
+    <section class="content-section split-section">
+      <div>
+        <p class="eyebrow">Формат співпраці</p>
+        <h2>НДДКР з подальшою реалізацією, якщо рішення підтвердить ефективність</h2>
+        <p>Ми не продаємо неперевірені обіцянки як готовий продукт. Спочатку формуємо задачу, створюємо дослідний зразок, перевіряємо його в реальних або наближених умовах, збираємо зауваження й лише після цього приймаємо рішення про доопрацювання або впровадження.</p>
+      </div>
+      <div class="check-list">
+        <p>Аналіз потреб замовника та постановка задачі.</p>
+        <p>Коротке технічне завдання, строки, бюджет і ризики.</p>
+        <p>Розробка макета, електроніки, прошивки або програмної частини.</p>
+        <p>Тестування, збір зауважень і доопрацювання.</p>
+        <p>Підготовка до малосерійного виготовлення або практичного впровадження.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-head">
+        <p class="eyebrow">Що можемо запропонувати</p>
+        <h2>Напрями НДДКР</h2>
+      </div>
+      <div class="feature-grid three-cols">
+        <article class="feature-card"><h3>Електронні модулі</h3><p>Розробка плат, вузлів живлення, інтерфейсів, керування периферією та інтеграція датчиків.</p></article>
+        <article class="feature-card"><h3>Embedded firmware</h3><p>Прошивки для STM32, AVR, ESP32, робота з периферією, телеметрією, логікою станів і діагностикою.</p></article>
+        <article class="feature-card"><h3>Сенсори та виявлення подій</h3><p>Пристрої на базі датчиків руху, вібрації та просторового положення, алгоритми аналізу сигналів.</p></article>
+        <article class="feature-card"><h3>Сумісні модулі для того що літає, плаває або їздить</h3><p>Допоміжні електронні та механічні модулі з фокусом на сумісність, вагу, живлення та надійність.</p></article>
+        <article class="feature-card"><h3>Телеметрія та зв’язок</h3><p>LoRa, Wi‑Fi, BLE, збір і передача даних, контроль станів, журнали подій, аналіз стабільності каналу.</p></article>
+        <article class="feature-card"><h3>Візуалізація даних</h3><p>Вебзастосунки, панелі контролю, графіки, API, бази даних і прикладні інструменти для аналізу результатів.</p></article>
+      </div>
+    </section>
+
+    <section class="content-section process-section">
+      <div class="section-head">
+        <p class="eyebrow">Порядок роботи</p>
+        <h2>Прозорий цикл від задачі до робочого рішення</h2>
+      </div>
+      <div class="process-grid">
+        <div><span>1</span><h3>Задача</h3><p>Описуємо проблему, умови, обмеження, очікуваний результат і критерії перевірки.</p></div>
+        <div><span>2</span><h3>ТЗ</h3><p>Формуємо коротке технічне завдання та план першого етапу без зайвого роздування бюджету.</p></div>
+        <div><span>3</span><h3>Прототип</h3><p>Створюємо дослідний зразок або програмний модуль, достатній для перевірки гіпотези.</p></div>
+        <div><span>4</span><h3>Тест</h3><p>Перевіряємо рішення, збираємо дані та фіксуємо, що саме потрібно змінити.</p></div>
+        <div><span>5</span><h3>Доробка</h3><p>Покращуємо конструкцію, прошивку, механіку або інтерфейс за результатами тестування.</p></div>
+        <div><span>6</span><h3>Реалізація</h3><p>Готуємо документацію, комплектацію і варіант для малосерійного виготовлення або впровадження.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section note-section">
+      <p class="eyebrow">Перевага підходу</p>
+      <h2>Менше витрат на неперевірені ідеї</h2>
+      <p>Етапний формат дозволяє швидко зрозуміти, чи має рішення практичну цінність. Замовник отримує не абстрактну презентацію, а перевірений технічний результат і зрозумілий план наступного кроку.</p>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <p class="eyebrow">Запит на НДДКР</p>
+        <h2>Готові розглянути актуальну технічну задачу</h2>
+        <p>Надішліть короткий опис задачі, умови використання, обмеження та бажаний результат. Підготуємо реалістичну оцінку першого етапу.</p>
+      </div>
+      <button class="cta" type="button" id="openContactsBottom">Обговорити НДДКР</button>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="contactModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Зв’язатися з PRV Systems</div>
+      <button class="modal-close" id="closeContacts" type="button" aria-label="Закрити">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-hint">Опишіть задачу, поточну проблему або ідею. Ми відповімо з реалістичним планом першого етапу НДДКР.</p>
+      <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
+        <div class="form-grid">
+          <input class="field" name="name" type="text" placeholder="Ваше ім’я / організація" required>
+          <input class="field" name="email" type="email" placeholder="Email для відповіді" required>
+          <textarea class="field" name="message" placeholder="Коротко опишіть задачу, умови роботи, бажаний результат" required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Запит із сайту PRV Systems">
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="cancelBtn" type="button">Скасувати</button>
+          <button class="btn btn-primary" type="submit">Надіслати</button>
+        </div>
+        <p class="status" id="status"></p>
+      </form>
+    </div>
+  </div>
+</div>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <strong>PRV Systems</strong> — НДДКР, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
+  </div>
+</footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
