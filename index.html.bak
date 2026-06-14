@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRV Systems</title>
-  <meta name="description" content="Ми виконуємо R&amp;D, розробку електроніки, прошивок STM32/AVR/ESP32, IoT-систем, сенсорних модулів, телеметрії, вебвізуалізації та 3D-прототипів.">
-  <meta name="keywords" content="R&amp;D, embedded systems, IoT, STM32, ESP32, AVR, розробка електроніки, прошивки, телеметрія, сенсорні модулі, LoRa, BLE, Wi-Fi, 3D друк, прототипування">
+  <meta name="description" content="PRV Systems виконує НДДКР, розробку електроніки, прошивок STM32/AVR/ESP32, IoT-систем, сенсорних модулів, телеметрії, вебвізуалізації та 3D-прототипів.">
+  <meta name="keywords" content="НДДКР, embedded systems, IoT, STM32, ESP32, AVR, розробка електроніки, прошивки, телеметрія, сенсорні модулі, LoRa, BLE, Wi-Fi, 3D друк, прототипування">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://prv-systems.com/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content=" R&amp;D та embedded-розробка">
+  <meta property="og:title" content="PRV Systems — НДДКР та embedded-розробка">
   <meta property="og:description" content="Інженерна розробка електроніки, прошивок, IoT, сенсорних модулів, телеметрії та прототипів під конкретні задачі.">
   <meta property="og:image" content="https://prv-systems.com/assets/img/hero-image.jpg">
   <meta property="og:url" content="https://prv-systems.com/">
@@ -21,7 +21,9 @@
 </head>
 <body>
   <header class="nav">
-      <span>Інженерія тут !</span>
+    <a class="logo" href="./" aria-label="PRV Systems">
+      <img src="assets/img/prv_logo.png" alt="PRV Systems logo">
+      <span>PRV Systems</span>
     </a>
     <nav class="menu" aria-label="Основна навігація">
       <a href="./">Головна</a>
@@ -161,7 +163,7 @@
 </div>
   <footer class="site-footer">
   <div class="footer-content">
-    R&amp;D, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
+    <strong>PRV Systems</strong> — НДДКР, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
   </div>
 </footer>
   <script src="assets/js/main.js"></script>
