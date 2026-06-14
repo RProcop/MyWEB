@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRV Systems</title>
-  <meta name="description" content="Напрями: R&amp;D, IoT-пристрої, розробка прошивок, PCB, сенсорні модулі, допоміжна електроніка, телеметрія, дашборди, тестові стенди та 3D-прототипи.">
+  <meta name="description" content="Напрями PRV Systems: IoT-пристрої, розробка прошивок, PCB, сенсорні модулі, допоміжна електроніка для БПЛА, телеметрія, вебпанелі, тестові стенди та 3D-прототипи.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://prv-systems.com/projects/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,13 +14,15 @@
 </head>
 <body>
   <header class="nav">
-      <span>Інженерія без зайвого</span>
+    <a class="logo" href="../" aria-label="PRV Systems">
+      <img src="../assets/img/prv_logo.png" alt="PRV Systems logo">
+      <span>PRV Systems</span>
     </a>
     <nav class="menu" aria-label="Основна навігація">
       <a href="../">Головна</a>
       <a href="../about/">Про нас</a>
       <a href="./">Напрями</a>
-      <a href="../rnd/">R&amp;D</a>
+      <a href="../rnd/">НДДКР</a>
     </nav>
     <button class="nav-contact" type="button" id="openContacts">Обговорити задачу</button>
   </header>
@@ -28,8 +30,8 @@
   <main>
     <section class="page-hero text-only-hero">
       <p class="eyebrow">Напрями робіт</p>
-      <h1>Розробка прикладних технічних рішень: від сенсора до візуалізації даних</h1>
-      <p>Ми беремо задачі, де потрібна комбінація електроніки, прошивки, механіки, передачі даних і програмної частини. Нижче — основні напрями, які можна використати як базу для R&amp;D або окремої розробки.</p>
+      <h1>Розробка прикладних технічних рішень: від сенсора до вебпанелі</h1>
+      <p>Ми беремо задачі, де потрібна комбінація електроніки, прошивки, механіки, передачі даних і програмної частини. Нижче — основні напрями, які можна використати як базу для НДДКР або окремої розробки.</p>
     </section>
 
     <section class="content-section">
@@ -37,7 +39,7 @@
         <article class="feature-card tall-card">
           <div class="card-badge">Embedded</div>
           <h2>Розробка електронних пристроїв</h2>
-          <p>Розробка схемотехніки та друкованої плати (PCB), підбір компонентів, живлення, інтерфейси, прототипування та підготовка до малосерійного виготовлення.</p>
+          <p>Схемотехніка, PCB, підбір компонентів, живлення, інтерфейси, прототипи та підготовка до малосерійного виготовлення.</p>
           <ul><li>STM32, AVR, ESP32</li><li>UART, SPI, I2C, 1‑Wire</li><li>Датчики, керування, діагностика</li></ul>
         </article>
         <article class="feature-card tall-card">
@@ -50,7 +52,7 @@
           <div class="card-badge">Sensors</div>
           <h2>Сенсорні модулі</h2>
           <p>Пристрої для вимірювання руху, вібрації, просторового положення, температури, станів середовища або технічного об’єкта.</p>
-          <ul><li>Датчики та інш</li><li>Алгоритми виявлення подій</li><li>Фільтрація і аналіз сигналів</li></ul>
+          <ul><li>Вібраційні та інерційні датчики</li><li>Алгоритми виявлення подій</li><li>Фільтрація і аналіз сигналів</li></ul>
         </article>
         <article class="feature-card tall-card">
           <div class="card-badge">UAV</div>
@@ -60,7 +62,7 @@
         </article>
         <article class="feature-card tall-card">
           <div class="card-badge">Data</div>
-          <h2>Телеметрія та візуалізація</h2>
+          <h2>Телеметрія та вебвізуалізація</h2>
           <p>Системи збору даних, API, бази даних, графіки, журнали подій, панелі контролю, інструменти для аналізу тестів і експлуатації.</p>
           <ul><li>Web dashboard</li><li>API та бази даних</li><li>Графіки, події, звіти</li></ul>
         </article>
@@ -83,11 +85,11 @@
   <div class="modal-backdrop" id="contactModal" aria-hidden="true">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-header">
-      <div class="modal-title" id="modalTitle">Зв’язатися з нами</div>
+      <div class="modal-title" id="modalTitle">Зв’язатися з PRV Systems</div>
       <button class="modal-close" id="closeContacts" type="button" aria-label="Закрити">✕</button>
     </div>
     <div class="modal-body">
-      <p class="modal-hint">Опишіть задачу, поточну проблему або ідею. Ми відповімо з реалістичним планом першого етапу.p>
+      <p class="modal-hint">Опишіть задачу, поточну проблему або ідею. Ми відповімо з реалістичним планом першого етапу НДДКР.</p>
       <form id="contactForm" action="https://formspree.io/f/meelzrvv" method="POST">
         <div class="form-grid">
           <input class="field" name="name" type="text" placeholder="Ваше ім’я / організація" required>
@@ -106,7 +108,8 @@
 </div>
   <footer class="site-footer">
   <div class="footer-content">
-R&amp;D, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026  </div>
+    <strong>PRV Systems</strong> — НДДКР, embedded-розробка, IoT, сенсори, прототипування та 3D-друк. © 2026
+  </div>
 </footer>
   <script src="../assets/js/main.js"></script>
 </body>
